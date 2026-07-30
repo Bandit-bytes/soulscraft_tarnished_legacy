@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "id": "soulscraft_tarnished_legacy",
   "version": "${version}",
-  "name": "SoulsCraft Tarnished Legacy",
-  "description": "",
+  "name": "Tarnished Legacy",
+  "description": "Relics of fallen champions, reforged for the Tarnished. A standalone collection of animated armor inspired by Elden Ring.",
   "authors": [
-    ""
+    "Pixel Dream Studios"
   ],
   "contact": {
     "homepage": ""
@@ -21,16 +21,12 @@
       "net.pixeldreamstudios.soulscraft_tarnished_legacy.fabric.client.SoulsCraftTarnishedLegacyFabricClient"
     ]
   },
-  "mixins": [
-    "soulscraft_tarnished_legacy.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=0.16.9",
     "minecraft": "~1.21.1",
     "java": ">=21",
     "architectury": ">=13.0.8",
     "fabric-api": "*",
-    "azurelib": ">=2.3.4",
-    "soulscraft": ">=1.0"
+    "azurelib": ">=3.1.11"
   }
 }

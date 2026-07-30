@@ -1,17 +1,16 @@
 package net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.sets;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.pixeldreamstudios.soulscraft.item.armor.client.dispatcher.SoulsCraftArmorDispatcher;
-import net.pixeldreamstudios.soulscraft.item.armor.sets.SoulsCraftArmorItem;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.TarnishedArmorMaterials;
-import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.client.renderer.BlaiddArmorRenderer;
 
-public class BlaiddArmorItem extends SoulsCraftArmorItem {
-    // This is your class where you will setup the AzCommands/Animations you wish to play
-    public final SoulsCraftArmorDispatcher DISPATCHER;
-
-    public BlaiddArmorItem(Type type, Item.Properties properties ) {
-        super(TarnishedArmorMaterials.BLAIDD_ARMOR, type, BlaiddArmorRenderer::new, properties);
-        this.DISPATCHER = new SoulsCraftArmorDispatcher();
-    }
+public class BlaiddArmorItem extends TarnishedArmorItem {
+ public BlaiddArmorItem(Type type, Item.Properties properties) {
+  super(TarnishedArmorMaterials.BLAIDD, type, properties, "blaidd");
+ }
+ @Override protected void applySetBonus(Player player) {
+  player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 40, 0, true, false, true));
+ }
 }

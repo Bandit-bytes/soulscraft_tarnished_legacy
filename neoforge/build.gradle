@@ -41,7 +41,6 @@ dependencies {
 
     modImplementation "mod.azure.azurelib:azurelib-neo-${minecraft_version}:${azurelib_version}"
 
-    modImplementation "net.pixeldreamstudios:soulscraft-${minecraft_version}-neoforge:${soulscraft_version}"
 }
 
 processResources {

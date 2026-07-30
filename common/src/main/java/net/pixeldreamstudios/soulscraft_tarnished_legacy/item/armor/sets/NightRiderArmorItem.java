@@ -1,17 +1,16 @@
 package net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.sets;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.pixeldreamstudios.soulscraft.item.armor.client.dispatcher.SoulsCraftArmorDispatcher;
-import net.pixeldreamstudios.soulscraft.item.armor.sets.SoulsCraftArmorItem;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.TarnishedArmorMaterials;
-import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.client.renderer.NightRiderArmorRenderer;
 
-public class NightRiderArmorItem extends SoulsCraftArmorItem {
-    // This is your class where you will setup the AzCommands/Animations you wish to play
-    public final SoulsCraftArmorDispatcher DISPATCHER;
-
-    public NightRiderArmorItem(Type type, Item.Properties properties) {
-        super(TarnishedArmorMaterials.NIGHT_RIDER, type, NightRiderArmorRenderer::new, properties);
-        this.DISPATCHER = new SoulsCraftArmorDispatcher();
-    }
+public class NightRiderArmorItem extends TarnishedArmorItem {
+ public NightRiderArmorItem(Type type, Item.Properties properties) {
+  super(TarnishedArmorMaterials.NIGHT_RIDER, type, properties, "night_rider");
+ }
+ @Override protected void applySetBonus(Player player) {
+  player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 40, 0, true, false, true));
+ }
 }

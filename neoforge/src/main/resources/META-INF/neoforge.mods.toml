@@ -6,11 +6,9 @@ license = "GNU GPL 3.0"
 [[mods]]
 modId = "soulscraft_tarnished_legacy"
 version = "${version}"
-displayName = "SoulsCraft Tarnished Legacy"
-authors = ""
-description = '''
-
-'''
+displayName = "Tarnished Legacy"
+authors = "Pixel Dream Studios"
+description = '''Relics of fallen champions, reforged for the Tarnished. A standalone collection of animated armor inspired by Elden Ring.'''
 #logoFile = ""
 
 [[dependencies.soulscraft_tarnished_legacy]]
@@ -37,16 +35,8 @@ side = "BOTH"
 [[dependencies.soulscraft_tarnished_legacy]]
 modId = "azurelib"
 type = "required"
-versionRange = "[2.3.28,)"
+versionRange = "[3.1.11,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.soulscraft_tarnished_legacy]]
-modId = "soulscraft"
-type = "required"
-versionRange = "[1.0,)"
-ordering = "AFTER"
-side = "BOTH"
 
-[[mixins]]
-config = "soulscraft_tarnished_legacy.mixins.json"
