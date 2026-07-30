@@ -16,17 +16,14 @@
   "entrypoints": {
     "main": [
       "net.pixeldreamstudios.soulscraft_tarnished_legacy.fabric.SoulsCraftTarnishedLegacyFabric"
-    ],
-    "client": [
-      "net.pixeldreamstudios.soulscraft_tarnished_legacy.fabric.client.SoulsCraftTarnishedLegacyFabricClient"
     ]
   },
   "depends": {
-    "fabricloader": ">=0.16.9",
+    "fabricloader": ">=0.17.0",
     "minecraft": "~1.21.1",
     "java": ">=21",
     "architectury": ">=13.0.8",
     "fabric-api": "*",
-    "azurelib": ">=3.1.11"
+    "geckolib": ">=4.9.2"
   }
 }

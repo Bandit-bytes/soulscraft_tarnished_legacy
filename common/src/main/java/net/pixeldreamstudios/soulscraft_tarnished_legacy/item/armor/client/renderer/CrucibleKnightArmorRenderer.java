@@ -1,11 +1,17 @@
 package net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.client.renderer;
 
-import mod.azure.azurelib.common.render.armor.AzArmorRenderer;
-import mod.azure.azurelib.common.render.armor.AzArmorRendererConfig;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacy;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.client.model.CapeStyle;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.client.model.TarnishedArmorModel;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.sets.TarnishedArmorItem;
+import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
-public class CrucibleKnightArmorRenderer extends AzArmorRenderer {
-    public CrucibleKnightArmorRenderer() { super(AzArmorRendererConfig.builder(SoulsCraftTarnishedLegacy.resource("geo/armor/crucible_knight_armor.geo.json"),
-            SoulsCraftTarnishedLegacy.resource("textures/armor/crucible_knight_armor.png")).build());
+public final class CrucibleKnightArmorRenderer extends GeoArmorRenderer<TarnishedArmorItem> {
+    public CrucibleKnightArmorRenderer() {
+        super(new TarnishedArmorModel(
+                SoulsCraftTarnishedLegacy.resource("geo/armor/crucible_knight_armor.geo.json"),
+                SoulsCraftTarnishedLegacy.resource("textures/armor/crucible_knight_armor.png"),
+                CapeStyle.NONE
+        ));
     }
 }

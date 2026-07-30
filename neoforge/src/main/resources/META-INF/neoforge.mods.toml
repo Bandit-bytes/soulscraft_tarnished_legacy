@@ -14,7 +14,7 @@ description = '''Relics of fallen champions, reforged for the Tarnished. A stand
 [[dependencies.soulscraft_tarnished_legacy]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21,)"
+versionRange = "[21.1.150,)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -33,10 +33,10 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.soulscraft_tarnished_legacy]]
-modId = "azurelib"
+modId = "geckolib"
 type = "required"
-versionRange = "[3.1.11,)"
-ordering = "NONE"
+versionRange = "[4.9.2,)"
+ordering = "AFTER"
 side = "BOTH"
 
 

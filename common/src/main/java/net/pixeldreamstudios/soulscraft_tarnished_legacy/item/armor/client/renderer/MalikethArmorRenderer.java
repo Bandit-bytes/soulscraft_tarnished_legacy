@@ -1,26 +1,17 @@
 package net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.client.renderer;
 
-import mod.azure.azurelib.common.render.armor.AzArmorRenderer;
-import mod.azure.azurelib.common.render.armor.AzArmorRendererConfig;
-import net.minecraft.resources.ResourceLocation;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacy;
-import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.client.animator.MalikethArmorAnimator;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.client.model.CapeStyle;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.client.model.TarnishedArmorModel;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.sets.TarnishedArmorItem;
+import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
-public class MalikethArmorRenderer extends AzArmorRenderer {
-
-    private static final ResourceLocation GEO = SoulsCraftTarnishedLegacy.resource(
-            "geo/armor/maliketh_armor.geo.json"
-    );
-
-    private static final ResourceLocation TEX = SoulsCraftTarnishedLegacy.resource(
-            "textures/armor/maliketh_armor.png"
-    );
-
+public final class MalikethArmorRenderer extends GeoArmorRenderer<TarnishedArmorItem> {
     public MalikethArmorRenderer() {
-        super(
-        AzArmorRendererConfig.builder(GEO, TEX)
-                .setAnimatorProvider(MalikethArmorAnimator::new)
-                .build()
-        );
+        super(new TarnishedArmorModel(
+                SoulsCraftTarnishedLegacy.resource("geo/armor/maliketh_armor.geo.json"),
+                SoulsCraftTarnishedLegacy.resource("textures/armor/maliketh_armor.png"),
+                CapeStyle.MALIKETH
+        ));
     }
 }
