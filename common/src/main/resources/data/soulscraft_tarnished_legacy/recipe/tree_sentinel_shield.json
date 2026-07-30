@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "GDG",
+    "GRG",
+    " G "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "R": {
+      "item": "soulscraft_tarnished_legacy:erdtree_crest"
+    }
+  },
+  "result": {
+    "id": "soulscraft_tarnished_legacy:tree_sentinel_shield",
+    "count": 1
+  }
+}

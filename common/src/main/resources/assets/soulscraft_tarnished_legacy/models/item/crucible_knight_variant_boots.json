@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "soulscraft_tarnished_legacy:item/crucible_knight_variant_boots"
+  }
+}

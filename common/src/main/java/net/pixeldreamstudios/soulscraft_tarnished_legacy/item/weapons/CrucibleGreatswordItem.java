@@ -1,0 +1,17 @@
+package net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons;
+
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Tier;
+
+public final class CrucibleGreatswordItem extends TarnishedWeaponItem {
+    public CrucibleGreatswordItem(Tier tier, Properties properties) {
+        super(tier, properties, "crucible_greatsword", "greatsword");
+    }
+
+    @Override
+    protected void applyTrait(LivingEntity target, LivingEntity attacker) {
+        if (roll(attacker, 0.25F)) {
+            target.knockback(1.25D, target.getX() - attacker.getX(), target.getZ() - attacker.getZ());
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "soulscraft_tarnished_legacy:item/maliketh_boots"
+  }
+}

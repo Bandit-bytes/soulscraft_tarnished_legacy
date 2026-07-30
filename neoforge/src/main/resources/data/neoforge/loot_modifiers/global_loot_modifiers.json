@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "entries": [
+    "soulscraft_tarnished_legacy:night_cavalry_ruined_portal",
+    "soulscraft_tarnished_legacy:night_cavalry_outpost",
+    "soulscraft_tarnished_legacy:royal_wolf_mansion",
+    "soulscraft_tarnished_legacy:royal_wolf_ancient_city",
+    "soulscraft_tarnished_legacy:crucible_corridor",
+    "soulscraft_tarnished_legacy:crucible_crossing",
+    "soulscraft_tarnished_legacy:erdtree_bastion",
+    "soulscraft_tarnished_legacy:erdtree_pyramid",
+    "soulscraft_tarnished_legacy:destined_death_end_city",
+    "soulscraft_tarnished_legacy:destined_death_ice_box"
+  ]
+}
