@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "MBM",
+    "M M",
+    "MSM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "soulscraft_tarnished_legacy:soul_in_a_bottle"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "id": "soulscraft_tarnished_legacy:ronin_leggings",
+    "count": 1
+  }
+}

@@ -4,6 +4,7 @@ import java.util.Map;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -11,8 +12,15 @@ import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacy;
 
-/** Adds the relic pools without replacing any vanilla or modded chest loot. */
+/** Adds relic pools without replacing vanilla or modded loot. */
 public final class TarnishedLootTableModifiers {
+
+    private static final ResourceKey<LootTable> GHAST_LOOT =
+            ResourceKey.create(
+                    Registries.LOOT_TABLE,
+                    ResourceLocation.withDefaultNamespace("entities/ghast")
+            );
+
     private static final Map<ResourceKey<LootTable>, ResourceKey<LootTable>> INJECTIONS = Map.ofEntries(
             Map.entry(BuiltInLootTables.RUINED_PORTAL, injection("night_cavalry_insignia")),
             Map.entry(BuiltInLootTables.PILLAGER_OUTPOST, injection("night_cavalry_insignia")),
@@ -23,7 +31,8 @@ public final class TarnishedLootTableModifiers {
             Map.entry(BuiltInLootTables.BASTION_TREASURE, injection("erdtree_crest")),
             Map.entry(BuiltInLootTables.DESERT_PYRAMID, injection("erdtree_crest")),
             Map.entry(BuiltInLootTables.END_CITY_TREASURE, injection("destined_death_fragment")),
-            Map.entry(BuiltInLootTables.ANCIENT_CITY_ICE_BOX, injection("destined_death_fragment"))
+            Map.entry(BuiltInLootTables.ANCIENT_CITY_ICE_BOX, injection("destined_death_fragment")),
+            Map.entry(GHAST_LOOT, injection("soul_in_a_bottle"))
     );
 
     private TarnishedLootTableModifiers() {

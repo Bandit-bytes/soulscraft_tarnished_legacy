@@ -13,12 +13,7 @@ import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.sets.*;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.relics.TarnishedRelicItem;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.shields.CrucibleHornshieldItem;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.shields.ErdtreeGreatshieldItem;
-import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons.BlaiddRoyalGreatswordItem;
-import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons.CrucibleGreatswordItem;
-import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons.MalikethBlackBladeItem;
-import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons.NightRiderGlaiveItem;
-import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons.TarnishedWeaponMaterials;
-import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons.TreeSentinelHalberdItem;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons.*;
 
 public final class ItemRegistry {
 
@@ -385,6 +380,15 @@ public final class ItemRegistry {
                     )
             );
 
+    public static final RegistrySupplier<Item> SOUL_IN_A_BOTTLE =
+            ITEMS.register(
+                    "soul_in_a_bottle",
+                    () -> new TarnishedRelicItem(
+                            relicProperties(Rarity.EPIC),
+                            "soul_in_a_bottle"
+                    )
+            );
+
     public static final RegistrySupplier<Item> ERDTREE_CREST =
             ITEMS.register(
                     "erdtree_crest",
@@ -468,6 +472,20 @@ public final class ItemRegistry {
                                     TarnishedWeaponMaterials.MALIKETH_TIER,
                                     8,
                                     -3.1F,
+                                    Rarity.EPIC
+                            )
+                    )
+            );
+
+    public static final RegistrySupplier<Item> NAGAKIBA =
+            ITEMS.register(
+                    "nagakiba",
+                    () -> new NagakibaItem(
+                            TarnishedWeaponMaterials.SAMURAI_TIER,
+                            weaponProperties(
+                                    TarnishedWeaponMaterials.SAMURAI_TIER,
+                                    7,
+                                    -2.4F,
                                     Rarity.EPIC
                             )
                     )

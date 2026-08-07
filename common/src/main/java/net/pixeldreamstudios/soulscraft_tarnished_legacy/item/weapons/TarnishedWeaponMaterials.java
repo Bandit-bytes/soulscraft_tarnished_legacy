@@ -30,6 +30,10 @@ public final class TarnishedWeaponMaterials implements Tier {
             2031, 10.0F, 6.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(Items.NETHERITE_SCRAP));
 
+    public static final Tier SAMURAI_TIER = new TarnishedWeaponMaterials(
+            1561, 10.0F, 4.0F, 18, BlockTags.NEEDS_DIAMOND_TOOL,
+            () -> Ingredient.of(Items.IRON_INGOT));
+
     private final int uses;
     private final float speed;
     private final float damage;
