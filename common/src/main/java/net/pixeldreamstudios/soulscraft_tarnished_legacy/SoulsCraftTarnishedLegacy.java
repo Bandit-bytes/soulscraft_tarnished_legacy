@@ -14,6 +14,10 @@ public final class SoulsCraftTarnishedLegacy {
         ItemRegistry.init();
     }
 
+    public static void initClient() {
+        SoulsCraftTarnishedLegacy.initClient();
+    }
+
     public static ResourceLocation resource(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }

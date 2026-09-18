@@ -2,6 +2,12 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
+	"overrides": [
+		{
+			"predicate": { "blocking": 1.0 },
+			"model": "soulscraft_tarnished_legacy:item/crucible_shield_blocking"
+		}
+	],
 	"textures": {
 		"0": "soulscraft_tarnished_legacy:item/crucible_shield",
 		"particle": "soulscraft_tarnished_legacy:item/crucible_shield"
@@ -108,6 +114,16 @@
 		"thirdperson_lefthand": {
 			"rotation": [0, -90, 0],
 			"translation": [1, -6, 2]
+		},
+		"firstperson_righthand": {
+			"rotation": [-1, 0, -1],
+			"translation": [1, -4.25, 0],
+			"scale": [0.86, 0.9, 0.82]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-1, 0, 0],
+			"translation": [2.5, -4.75, 0],
+			"scale": [0.86, 0.9, 0.82]
 		},
 		"ground": {
 			"translation": [0, 1.25, 0]
