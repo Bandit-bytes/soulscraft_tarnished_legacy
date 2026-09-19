@@ -11,7 +11,7 @@ public final class RadahnArmorRenderer extends GeoArmorRenderer<TarnishedArmorIt
         super(new TarnishedArmorModel(
                 SoulsCraftTarnishedLegacy.resource("geo/armor/radahn_armor.geo.json"),
                 SoulsCraftTarnishedLegacy.resource("textures/armor/radahn_armor.png"),
-                CapeStyle.MALIKETH
+                CapeStyle.BLAIDD
         ));
     }
 }

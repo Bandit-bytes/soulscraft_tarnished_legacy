@@ -12,7 +12,6 @@ import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacy;
 
-/** Adds relic pools without replacing vanilla or modded loot. */
 public final class TarnishedLootTableModifiers {
 
     private static final ResourceKey<LootTable> GHAST_LOOT =
