@@ -34,6 +34,10 @@ public final class TarnishedWeaponMaterials implements Tier {
             1561, 10.0F, 4.0F, 18, BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(Items.IRON_INGOT));
 
+    public static final Tier RADAHN_TIER = new TarnishedWeaponMaterials(
+            2200, 9.0F, 6.0F, 12, BlockTags.NEEDS_DIAMOND_TOOL,
+            () -> Ingredient.of(Items.GOLD_INGOT));
+
     private final int uses;
     private final float speed;
     private final float damage;

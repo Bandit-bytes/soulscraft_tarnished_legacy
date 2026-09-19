@@ -353,6 +353,47 @@ public final class ItemRegistry {
             );
 
 
+    /*
+     * General Radahn armor
+     */
+
+    public static final RegistrySupplier<Item> RADAHN_HELMET =
+            ITEMS.register(
+                    "radahn_helmet",
+                    () -> new RadahnArmorItem(
+                            ArmorItem.Type.HELMET,
+                            armorProperties(660, Rarity.EPIC)
+                    )
+            );
+
+    public static final RegistrySupplier<Item> RADAHN_CHESTPLATE =
+            ITEMS.register(
+                    "radahn_chestplate",
+                    () -> new RadahnArmorItem(
+                            ArmorItem.Type.CHESTPLATE,
+                            armorProperties(660, Rarity.EPIC)
+                    )
+            );
+
+    public static final RegistrySupplier<Item> RADAHN_LEGGINGS =
+            ITEMS.register(
+                    "radahn_leggings",
+                    () -> new RadahnArmorItem(
+                            ArmorItem.Type.LEGGINGS,
+                            armorProperties(660, Rarity.EPIC)
+                    )
+            );
+
+    public static final RegistrySupplier<Item> RADAHN_BOOTS =
+            ITEMS.register(
+                    "radahn_boots",
+                    () -> new RadahnArmorItem(
+                            ArmorItem.Type.BOOTS,
+                            armorProperties(660, Rarity.EPIC)
+                    )
+            );
+
+
     public static final RegistrySupplier<Item> NIGHT_CAVALRY_INSIGNIA =
             ITEMS.register(
                     "night_cavalry_insignia",
@@ -406,6 +447,17 @@ public final class ItemRegistry {
                             "destined_death_fragment"
                     )
             );
+
+
+    public static final RegistrySupplier<Item> FALLINGSTAR_REMNANT =
+            ITEMS.register(
+                    "fallingstar_remnant",
+                    () -> new TarnishedRelicItem(
+                            relicProperties(Rarity.EPIC),
+                            "fallingstar_remnant"
+                    )
+            );
+
 
     public static final RegistrySupplier<Item> NIGHT_RIDER_GLAIVE =
             ITEMS.register(
@@ -486,6 +538,21 @@ public final class ItemRegistry {
                                     TarnishedWeaponMaterials.SAMURAI_TIER,
                                     7,
                                     -2.4F,
+                                    Rarity.EPIC
+                            )
+                    )
+            );
+
+
+    public static final RegistrySupplier<Item> STARSCOURGE_GREATSWORD =
+            ITEMS.register(
+                    "starscourge_greatsword",
+                    () -> new StarscourgeGreatswordItem(
+                            TarnishedWeaponMaterials.RADAHN_TIER,
+                            weaponProperties(
+                                    TarnishedWeaponMaterials.RADAHN_TIER,
+                                    9,
+                                    -3.2F,
                                     Rarity.EPIC
                             )
                     )

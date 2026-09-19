@@ -32,6 +32,7 @@ public final class TarnishedLootTableModifiers {
             Map.entry(BuiltInLootTables.DESERT_PYRAMID, injection("erdtree_crest")),
             Map.entry(BuiltInLootTables.END_CITY_TREASURE, injection("destined_death_fragment")),
             Map.entry(BuiltInLootTables.ANCIENT_CITY_ICE_BOX, injection("destined_death_fragment")),
+            Map.entry(BuiltInLootTables.ABANDONED_MINESHAFT, injection("fallingstar_remnant")),
             Map.entry(GHAST_LOOT, injection("soul_in_a_bottle"))
     );
 

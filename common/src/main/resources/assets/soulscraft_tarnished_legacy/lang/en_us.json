@@ -118,5 +118,20 @@
   "item.soulscraft_tarnished_legacy.soul_in_a_bottle": "Soul in a Bottle",
   "relic.soulscraft_tarnished_legacy.soul_in_a_bottle.lore.1": "A wandering spirit sealed within clouded glass.",
   "relic.soulscraft_tarnished_legacy.soul_in_a_bottle.lore.2": "Its pale light stirs with every distant wail.",
-  "relic.soulscraft_tarnished_legacy.soul_in_a_bottle.source": "Dropped by Ghasts"
+  "relic.soulscraft_tarnished_legacy.soul_in_a_bottle.source": "Dropped by Ghasts",
+  "armor_set.soulscraft_tarnished_legacy.radahn.lore": "Red-gold warplate worn by the lion general who challenged the very stars.",
+  "armor_set.soulscraft_tarnished_legacy.radahn.bonus": "Grants Strength while the complete set is worn.",
+  "item.soulscraft_tarnished_legacy.radahn_helmet": "Radahn's Redmane Helm",
+  "item.soulscraft_tarnished_legacy.radahn_chestplate": "Radahn's Lion Armor",
+  "item.soulscraft_tarnished_legacy.radahn_leggings": "Radahn's Greaves",
+  "item.soulscraft_tarnished_legacy.radahn_boots": "Radahn's Gauntlets",
+  "item.soulscraft_tarnished_legacy.starscourge_greatsword": "Starscourge Greatsword",
+  "item.soulscraft_tarnished_legacy.fallingstar_remnant": "Fallingstar Remnant",
+  "weapon.soulscraft_tarnished_legacy.starscourge_greatsword.lore.1": "A colossal blade steeped in the weight of a conquered star.",
+  "weapon.soulscraft_tarnished_legacy.starscourge_greatsword.lore.2": "Its pull bends the course of foes as surely as falling stone.",
+  "weapon.soulscraft_tarnished_legacy.starscourge_greatsword.trait.name": "Starcaller",
+  "weapon.soulscraft_tarnished_legacy.starscourge_greatsword.trait.description": "Hits have a 20% chance to drag the target toward the wielder.",
+  "relic.soulscraft_tarnished_legacy.fallingstar_remnant.lore.1": "A dense remnant chipped from a star that never reached the earth.",
+  "relic.soulscraft_tarnished_legacy.fallingstar_remnant.lore.2": "Dust and loose iron creep toward it when no hand is near.",
+  "relic.soulscraft_tarnished_legacy.fallingstar_remnant.source": "Abandoned mineshafts"
 }

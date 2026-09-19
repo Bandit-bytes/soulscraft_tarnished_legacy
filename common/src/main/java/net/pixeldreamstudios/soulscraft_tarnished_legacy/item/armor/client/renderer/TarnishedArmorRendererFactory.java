@@ -14,6 +14,7 @@ public final class TarnishedArmorRendererFactory {
             case "crucible_tree" -> new CrucibleKnightVariantArmorRenderer();
             case "tree_sentinel" -> new TreeSentinelArmorRenderer();
             case "maliketh" -> new MalikethArmorRenderer();
+            case "radahn" -> new RadahnArmorRenderer();
             default -> throw new IllegalArgumentException("Unknown Tarnished Legacy armor set: " + setId);
         };
     }
