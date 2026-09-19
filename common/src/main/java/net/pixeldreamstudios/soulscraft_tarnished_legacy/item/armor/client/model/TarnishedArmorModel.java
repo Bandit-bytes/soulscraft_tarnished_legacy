@@ -52,6 +52,14 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
             long instanceId,
             AnimationState<TarnishedArmorItem> animationState
     ) {
+        // Radahn's Blockbench model was authored with an additional head-space transform.
+        // The tracking bone is now vanilla-centered in the geo; this visual child keeps the
+        // intended silhouette while trimming the oversized helmet slightly.
+        GeoBone radahnHeadVisual = getBone("radahnHeadVisual").orElse(null);
+        if (radahnHeadVisual != null) {
+            radahnHeadVisual.updateScale(0.86F, 0.86F, 0.86F);
+        }
+
         GeoBone cape = getBone("cape").orElse(null);
         if (cape == null) {
             return;
