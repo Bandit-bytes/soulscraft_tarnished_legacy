@@ -16,6 +16,37 @@ public final class TarnishedRelicItem extends Item {
         this.relicId = relicId;
     }
 
+
+    public ItemStack getRecipeRemainder(ItemStack stack) {
+        return damagedCraftingRemainder(stack);
+    }
+
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        return stack.isDamageableItem()
+                && stack.getDamageValue() < stack.getMaxDamage();
+    }
+
+    public ItemStack getCraftingRemainingItem(ItemStack stack) {
+        return damagedCraftingRemainder(stack);
+    }
+
+    private ItemStack damagedCraftingRemainder(ItemStack stack) {
+        if (!stack.isDamageableItem()) {
+            return ItemStack.EMPTY;
+        }
+
+        int nextDamage = stack.getDamageValue() + 1;
+        if (nextDamage >= stack.getMaxDamage()) {
+            return ItemStack.EMPTY;
+        }
+
+        ItemStack remainder = stack.copy();
+        remainder.setCount(1);
+        remainder.setDamageValue(nextDamage);
+
+        return remainder;
+    }
+
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, context, tooltip, flag);

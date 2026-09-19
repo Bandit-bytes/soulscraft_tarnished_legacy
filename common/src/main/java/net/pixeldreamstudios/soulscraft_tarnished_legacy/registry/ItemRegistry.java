@@ -66,7 +66,7 @@ public final class ItemRegistry {
 
     private static Item.Properties relicProperties(Rarity rarity) {
         return new Item.Properties()
-                .stacksTo(16)
+                .durability(4)
                 .rarity(rarity)
                 .arch$tab(TabRegistry.TARNISHED_LEGACY_TAB);
     }

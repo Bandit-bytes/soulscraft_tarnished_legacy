@@ -7,14 +7,14 @@ license = "GNU GPL 3.0"
 modId = "soulscraft_tarnished_legacy"
 version = "${version}"
 displayName = "Tarnished Legacy"
-authors = "Pixel Dream Studios"
+authors = "Bandit-Bytes, Pixel Dream Studios"
 description = '''Relics of fallen champions, reforged for the Tarnished. A standalone collection of animated armor inspired by Elden Ring.'''
 #logoFile = ""
 
 [[dependencies.soulscraft_tarnished_legacy]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.1.150,)"
+versionRange = "[21.1.238,)"
 ordering = "NONE"
 side = "BOTH"
 
