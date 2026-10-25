@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "soulscraft_tarnished_legacy:night_rider_chestplate",
+    "soulscraft_tarnished_legacy:blaidd_chestplate",
+    "soulscraft_tarnished_legacy:ronin_chestplate",
+    "soulscraft_tarnished_legacy:crucible_knight_chestplate",
+    "soulscraft_tarnished_legacy:crucible_knight_variant_chestplate",
+    "soulscraft_tarnished_legacy:tree_sentinel_chestplate",
+    "soulscraft_tarnished_legacy:maliketh_chestplate",
+    "soulscraft_tarnished_legacy:radahn_chestplate"
+  ]
+}
