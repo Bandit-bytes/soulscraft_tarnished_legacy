@@ -21,6 +21,7 @@ public final class TarnishedArmorMaterials {
     public static final Holder<ArmorMaterial> BLAIDD = create("blaidd",3,6,8,3,12,2.5f,0.10f,SoundEvents.ARMOR_EQUIP_NETHERITE,Items.IRON_INGOT);
     public static final Holder<ArmorMaterial> RONIN = create("ronin",3,6,8,3,12,2.5f,0.10f,SoundEvents.ARMOR_EQUIP_NETHERITE,Items.IRON_INGOT);
     public static final Holder<ArmorMaterial> CRUCIBLE_KNIGHT = create("crucible_knight",4,7,9,4,15,3.5f,0.20f,SoundEvents.ARMOR_EQUIP_NETHERITE,Items.GOLD_INGOT);
+    public static final Holder<ArmorMaterial> CRUCIBLE_TREE = create("crucible_tree",4,7,9,4,15,3.5f,0.20f,SoundEvents.ARMOR_EQUIP_NETHERITE,Items.GOLD_INGOT);
     public static final Holder<ArmorMaterial> TREE_SENTINEL = create("tree_sentinel",4,7,9,4,14,3.0f,0.20f,SoundEvents.ARMOR_EQUIP_GOLD,Items.GOLD_INGOT);
     public static final Holder<ArmorMaterial> MALIKETH = create("maliketh",4,7,9,4,18,4.0f,0.25f,SoundEvents.ARMOR_EQUIP_NETHERITE,Items.NETHERITE_INGOT);
     public static final Holder<ArmorMaterial> RADAHN = create("radahn",4,7,10,4,14,4.0f,0.30f,SoundEvents.ARMOR_EQUIP_NETHERITE,Items.GOLD_INGOT);
