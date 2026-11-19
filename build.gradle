@@ -2,6 +2,7 @@ plugins {
     id 'dev.architectury.loom' version '1.17.477' apply false
     id 'architectury-plugin' version '3.5.169'
     id 'com.gradleup.shadow' version '9.6.1' apply false
+    id 'me.modmuss50.mod-publish-plugin' version '2.2.1' apply false
 }
 
 architectury {
@@ -11,6 +12,11 @@ architectury {
 allprojects {
     group = rootProject.maven_group
     version = rootProject.mod_version
+}
+
+ext.releaseChangelog = {
+    def matcher = rootProject.file('CHANGELOG.md').text =~ /(?s)## ${java.util.regex.Pattern.quote(rootProject.mod_version)}\n(.*?)(?=\n## |\z)/
+    matcher.find() ? matcher.group(1).trim() : ''
 }
 
 subprojects {
