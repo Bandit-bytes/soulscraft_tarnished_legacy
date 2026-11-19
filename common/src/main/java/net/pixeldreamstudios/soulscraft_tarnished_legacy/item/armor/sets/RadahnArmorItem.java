@@ -13,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.TarnishedArmorMaterials;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.registry.TarnishedDamageTypes;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.util.CombatHelper;
 
 public final class RadahnArmorItem extends TarnishedArmorItem {
@@ -54,7 +55,7 @@ public final class RadahnArmorItem extends TarnishedArmorItem {
                 continue;
             }
 
-            target.hurt(level.damageSources().playerAttack(player), damage);
+            target.hurt(TarnishedDamageTypes.source(TarnishedDamageTypes.GRAVITY_CRASH, player), damage);
 
             Vec3 away = new Vec3(target.getX() - center.x, 0.0D, target.getZ() - center.z);
             away = away.lengthSqr() < 0.0001D ? Vec3.ZERO : away.normalize();

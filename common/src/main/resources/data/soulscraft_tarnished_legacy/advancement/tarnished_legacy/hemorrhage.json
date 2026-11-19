@@ -1,0 +1,33 @@
+{
+  "parent": "soulscraft_tarnished_legacy:tarnished_legacy/root",
+  "display": {
+    "icon": {
+      "id": "soulscraft_tarnished_legacy:nagakiba"
+    },
+    "title": {
+      "translate": "advancements.soulscraft_tarnished_legacy.hemorrhage.title"
+    },
+    "description": {
+      "translate": "advancements.soulscraft_tarnished_legacy.hemorrhage.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "blood_loss_kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "soulscraft_tarnished_legacy:blood_loss",
+              "expected": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

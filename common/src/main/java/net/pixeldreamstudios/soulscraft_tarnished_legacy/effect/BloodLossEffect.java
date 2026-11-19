@@ -11,6 +11,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.registry.EffectRegistry;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.registry.TarnishedDamageTypes;
 import org.joml.Vector3f;
 
 public final class BloodLossEffect extends MobEffect {
@@ -45,7 +46,7 @@ public final class BloodLossEffect extends MobEffect {
 
         float damage = Mth.clamp(target.getMaxHealth() * BURST_MAX_HEALTH_FRACTION, BURST_MIN_DAMAGE, BURST_MAX_DAMAGE);
         target.invulnerableTime = 0;
-        target.hurt(target.damageSources().indirectMagic(attacker, attacker), damage);
+        target.hurt(TarnishedDamageTypes.source(TarnishedDamageTypes.BLOOD_LOSS, attacker), damage);
 
         level.sendParticles(BLOOD, target.getX(), target.getY(0.6D), target.getZ(),
                 40, target.getBbWidth() * 0.4D, target.getBbHeight() * 0.3D, target.getBbWidth() * 0.4D, 0.15D);

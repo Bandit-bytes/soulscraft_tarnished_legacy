@@ -1,0 +1,43 @@
+{
+  "parent": "soulscraft_tarnished_legacy:tarnished_legacy/hemorrhage",
+  "display": {
+    "icon": {
+      "id": "soulscraft_tarnished_legacy:nagakiba"
+    },
+    "title": {
+      "translate": "advancements.soulscraft_tarnished_legacy.let_them_bleed.title"
+    },
+    "description": {
+      "translate": "advancements.soulscraft_tarnished_legacy.let_them_bleed.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "blood_loss_boss_kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "soulscraft_tarnished_legacy:blood_loss",
+              "expected": true
+            }
+          ]
+        },
+        "entity": {
+          "type": [
+            "minecraft:wither",
+            "minecraft:warden",
+            "minecraft:elder_guardian"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 150
+  }
+}

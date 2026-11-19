@@ -1,0 +1,200 @@
+{
+  "parent": "soulscraft_tarnished_legacy:tarnished_legacy/root",
+  "display": {
+    "icon": {
+      "id": "soulscraft_tarnished_legacy:blaidd_chestplate"
+    },
+    "title": {
+      "translate": "advancements.soulscraft_tarnished_legacy.reforged.title"
+    },
+    "description": {
+      "translate": "advancements.soulscraft_tarnished_legacy.reforged.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "night_rider": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": "soulscraft_tarnished_legacy:night_rider_helmet"
+            },
+            "chest": {
+              "items": "soulscraft_tarnished_legacy:night_rider_chestplate"
+            },
+            "legs": {
+              "items": "soulscraft_tarnished_legacy:night_rider_leggings"
+            },
+            "feet": {
+              "items": "soulscraft_tarnished_legacy:night_rider_boots"
+            }
+          }
+        }
+      }
+    },
+    "blaidd": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": "soulscraft_tarnished_legacy:blaidd_helmet"
+            },
+            "chest": {
+              "items": "soulscraft_tarnished_legacy:blaidd_chestplate"
+            },
+            "legs": {
+              "items": "soulscraft_tarnished_legacy:blaidd_leggings"
+            },
+            "feet": {
+              "items": "soulscraft_tarnished_legacy:blaidd_boots"
+            }
+          }
+        }
+      }
+    },
+    "ronin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": "soulscraft_tarnished_legacy:ronin_helmet"
+            },
+            "chest": {
+              "items": "soulscraft_tarnished_legacy:ronin_chestplate"
+            },
+            "legs": {
+              "items": "soulscraft_tarnished_legacy:ronin_leggings"
+            },
+            "feet": {
+              "items": "soulscraft_tarnished_legacy:ronin_boots"
+            }
+          }
+        }
+      }
+    },
+    "crucible_knight": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": "soulscraft_tarnished_legacy:crucible_knight_helmet"
+            },
+            "chest": {
+              "items": "soulscraft_tarnished_legacy:crucible_knight_chestplate"
+            },
+            "legs": {
+              "items": "soulscraft_tarnished_legacy:crucible_knight_leggings"
+            },
+            "feet": {
+              "items": "soulscraft_tarnished_legacy:crucible_knight_boots"
+            }
+          }
+        }
+      }
+    },
+    "crucible_tree": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": "soulscraft_tarnished_legacy:crucible_knight_variant_helmet"
+            },
+            "chest": {
+              "items": "soulscraft_tarnished_legacy:crucible_knight_variant_chestplate"
+            },
+            "legs": {
+              "items": "soulscraft_tarnished_legacy:crucible_knight_variant_leggings"
+            },
+            "feet": {
+              "items": "soulscraft_tarnished_legacy:crucible_knight_variant_boots"
+            }
+          }
+        }
+      }
+    },
+    "tree_sentinel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": "soulscraft_tarnished_legacy:tree_sentinel_helmet"
+            },
+            "chest": {
+              "items": "soulscraft_tarnished_legacy:tree_sentinel_chestplate"
+            },
+            "legs": {
+              "items": "soulscraft_tarnished_legacy:tree_sentinel_leggings"
+            },
+            "feet": {
+              "items": "soulscraft_tarnished_legacy:tree_sentinel_boots"
+            }
+          }
+        }
+      }
+    },
+    "maliketh": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": "soulscraft_tarnished_legacy:maliketh_helmet"
+            },
+            "chest": {
+              "items": "soulscraft_tarnished_legacy:maliketh_chestplate"
+            },
+            "legs": {
+              "items": "soulscraft_tarnished_legacy:maliketh_leggings"
+            },
+            "feet": {
+              "items": "soulscraft_tarnished_legacy:maliketh_boots"
+            }
+          }
+        }
+      }
+    },
+    "radahn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": "soulscraft_tarnished_legacy:radahn_helmet"
+            },
+            "chest": {
+              "items": "soulscraft_tarnished_legacy:radahn_chestplate"
+            },
+            "legs": {
+              "items": "soulscraft_tarnished_legacy:radahn_leggings"
+            },
+            "feet": {
+              "items": "soulscraft_tarnished_legacy:radahn_boots"
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "night_rider",
+      "blaidd",
+      "ronin",
+      "crucible_knight",
+      "crucible_tree",
+      "tree_sentinel",
+      "maliketh",
+      "radahn"
+    ]
+  ]
+}

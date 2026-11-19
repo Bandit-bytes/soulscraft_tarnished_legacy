@@ -21,6 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.registry.TarnishedDamageTypes;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.util.CombatHelper;
 
 public final class StarscourgeSkill {
@@ -206,7 +207,7 @@ public final class StarscourgeSkill {
             }
 
             target.invulnerableTime = 0;
-            target.hurt(level.damageSources().playerAttack(player), damage);
+            target.hurt(TarnishedDamageTypes.source(TarnishedDamageTypes.STARSCOURGE_LIGHT, player), damage);
 
             if (launch) {
                 Vec3 away = target.position().subtract(position);

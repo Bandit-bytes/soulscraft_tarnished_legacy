@@ -82,6 +82,22 @@ Gear is crafted from **relics** found around the world. Each relic has 4 uses an
 
 The Nagakiba is crafted from vanilla materials. Recipes unlock in the recipe book as you collect each relic, and every item appears in the **Tarnished Legacy** creative tab.
 
+### Advancements
+
+A dedicated **Tarnished Legacy** advancement tab tracks your progress:
+
+| Advancement | How to earn it |
+|---|---|
+| **Tarnished Legacy** | Recover a relic of a fallen champion. |
+| **Reforged** | Wear a complete armor set. |
+| **Legacy of Champions** *(challenge)* | Wear every armor set. |
+| **Starscourge Descends** | Slay a foe with Radahn's Gravity Crash. |
+| **Hemorrhage** | Slay a foe with a Blood Loss burst. |
+| **Let Them Bleed** *(hidden challenge)* | ??? |
+| **Light of Miquella** | Slay a foe with the Greatsword of Radahn's pillars of light. |
+
+Deaths from Blood Loss, Gravity Crash and the Starscourge's light have their own death messages.
+
 ## Installation
 
 Download the mod from **[CurseForge](https://www.curseforge.com/minecraft/mc-mods/soulscraft-tarnished-legacy)** and install it, together with its dependencies, into a Minecraft **1.21.1** instance.
