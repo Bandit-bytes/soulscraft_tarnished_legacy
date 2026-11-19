@@ -11,31 +11,31 @@ import org.jetbrains.annotations.NotNull;
 
 public final class TarnishedWeaponMaterials implements Tier {
     public static final Tier NIGHTRIDER_TIER = new TarnishedWeaponMaterials(
-            1450, 10.0F, 4.0F, 18, BlockTags.NEEDS_DIAMOND_TOOL,
+            1450, 10.0F, 4.0F, 18, BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(Items.IRON_INGOT));
 
     public static final Tier BLAIDD_TIER = new TarnishedWeaponMaterials(
-            1700, 11.0F, 5.0F, 16, BlockTags.NEEDS_DIAMOND_TOOL,
+            1700, 11.0F, 5.0F, 16, BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(Items.DIAMOND));
 
     public static final Tier CRUCIBLE_TIER = new TarnishedWeaponMaterials(
-            1900, 9.0F, 5.0F, 14, BlockTags.NEEDS_DIAMOND_TOOL,
+            1900, 9.0F, 5.0F, 14, BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(Items.GOLD_INGOT));
 
     public static final Tier TREE_SENTINEL_TIER = new TarnishedWeaponMaterials(
-            1800, 10.0F, 4.5F, 16, BlockTags.NEEDS_DIAMOND_TOOL,
+            1800, 10.0F, 4.5F, 16, BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(Items.GOLD_INGOT));
 
     public static final Tier MALIKETH_TIER = new TarnishedWeaponMaterials(
-            2031, 10.0F, 6.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL,
+            2031, 10.0F, 6.0F, 10, BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(Items.NETHERITE_SCRAP));
 
     public static final Tier SAMURAI_TIER = new TarnishedWeaponMaterials(
-            1561, 10.0F, 4.0F, 18, BlockTags.NEEDS_DIAMOND_TOOL,
+            1561, 10.0F, 4.0F, 18, BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(Items.IRON_INGOT));
 
     public static final Tier RADAHN_TIER = new TarnishedWeaponMaterials(
-            2200, 9.0F, 6.0F, 12, BlockTags.NEEDS_DIAMOND_TOOL,
+            2200, 9.0F, 6.0F, 12, BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(Items.GOLD_INGOT));
 
     private final int uses;

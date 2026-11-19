@@ -9,8 +9,8 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 public final class CrucibleKnightVariantArmorRenderer extends GeoArmorRenderer<TarnishedArmorItem> {
     public CrucibleKnightVariantArmorRenderer() {
         super(new TarnishedArmorModel(
-                SoulsCraftTarnishedLegacy.resource("geo/armor/crucible_knight_armor2.geo.json"),
-                SoulsCraftTarnishedLegacy.resource("textures/armor/crucible_knight_armor2.png"),
+                SoulsCraftTarnishedLegacy.resource("geo/armor/crucible_tree_armor.geo.json"),
+                SoulsCraftTarnishedLegacy.resource("textures/armor/crucible_tree_armor.png"),
                 CapeStyle.NONE
         ));
     }

@@ -26,12 +26,17 @@ public final class ItemRegistry {
     private ItemRegistry() {
     }
 
+    /**
+     * Durability scales per slot like vanilla armor ({@code Type#getDurability}): the multiplier is
+     * the vanilla-style material multiplier (netherite is 37).
+     */
     private static Item.Properties armorProperties(
-            int durability,
+            ArmorItem.Type type,
+            int durabilityMultiplier,
             Rarity rarity
     ) {
         return new Item.Properties()
-                .durability(durability)
+                .durability(type.getDurability(durabilityMultiplier))
                 .stacksTo(1)
                 .rarity(rarity)
                 .arch$tab(TabRegistry.TARNISHED_LEGACY_TAB);
@@ -80,7 +85,7 @@ public final class ItemRegistry {
                     "night_rider_helmet",
                     () -> new NightRiderArmorItem(
                             ArmorItem.Type.HELMET,
-                            armorProperties(440, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.HELMET, 32, Rarity.RARE)
                     )
             );
 
@@ -89,7 +94,7 @@ public final class ItemRegistry {
                     "night_rider_chestplate",
                     () -> new NightRiderArmorItem(
                             ArmorItem.Type.CHESTPLATE,
-                            armorProperties(440, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.CHESTPLATE, 32, Rarity.RARE)
                     )
             );
 
@@ -98,7 +103,7 @@ public final class ItemRegistry {
                     "night_rider_leggings",
                     () -> new NightRiderArmorItem(
                             ArmorItem.Type.LEGGINGS,
-                            armorProperties(440, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.LEGGINGS, 32, Rarity.RARE)
                     )
             );
 
@@ -107,7 +112,7 @@ public final class ItemRegistry {
                     "night_rider_boots",
                     () -> new NightRiderArmorItem(
                             ArmorItem.Type.BOOTS,
-                            armorProperties(440, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.BOOTS, 32, Rarity.RARE)
                     )
             );
 
@@ -120,7 +125,7 @@ public final class ItemRegistry {
                     "blaidd_helmet",
                     () -> new BlaiddArmorItem(
                             ArmorItem.Type.HELMET,
-                            armorProperties(480, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.HELMET, 35, Rarity.RARE)
                     )
             );
 
@@ -129,7 +134,7 @@ public final class ItemRegistry {
                     "blaidd_chestplate",
                     () -> new BlaiddArmorItem(
                             ArmorItem.Type.CHESTPLATE,
-                            armorProperties(480, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.CHESTPLATE, 35, Rarity.RARE)
                     )
             );
 
@@ -138,7 +143,7 @@ public final class ItemRegistry {
                     "blaidd_leggings",
                     () -> new BlaiddArmorItem(
                             ArmorItem.Type.LEGGINGS,
-                            armorProperties(480, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.LEGGINGS, 35, Rarity.RARE)
                     )
             );
 
@@ -147,7 +152,7 @@ public final class ItemRegistry {
                     "blaidd_boots",
                     () -> new BlaiddArmorItem(
                             ArmorItem.Type.BOOTS,
-                            armorProperties(480, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.BOOTS, 35, Rarity.RARE)
                     )
             );
 
@@ -160,7 +165,7 @@ public final class ItemRegistry {
                     "ronin_helmet",
                     () -> new RoninArmorItem(
                             ArmorItem.Type.HELMET,
-                            armorProperties(480, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.HELMET, 35, Rarity.RARE)
                     )
             );
 
@@ -169,7 +174,7 @@ public final class ItemRegistry {
                     "ronin_chestplate",
                     () -> new RoninArmorItem(
                             ArmorItem.Type.CHESTPLATE,
-                            armorProperties(480, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.CHESTPLATE, 35, Rarity.RARE)
                     )
             );
 
@@ -178,7 +183,7 @@ public final class ItemRegistry {
                     "ronin_leggings",
                     () -> new RoninArmorItem(
                             ArmorItem.Type.LEGGINGS,
-                            armorProperties(480, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.LEGGINGS, 35, Rarity.RARE)
                     )
             );
 
@@ -187,7 +192,7 @@ public final class ItemRegistry {
                     "ronin_boots",
                     () -> new RoninArmorItem(
                             ArmorItem.Type.BOOTS,
-                            armorProperties(480, Rarity.RARE)
+                            armorProperties(ArmorItem.Type.BOOTS, 35, Rarity.RARE)
                     )
             );
 
@@ -201,7 +206,7 @@ public final class ItemRegistry {
                     "crucible_knight_helmet",
                     () -> new CrucibleKnightArmorItem(
                             ArmorItem.Type.HELMET,
-                            armorProperties(540, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.HELMET, 39, Rarity.EPIC)
                     )
             );
 
@@ -210,7 +215,7 @@ public final class ItemRegistry {
                     "crucible_knight_chestplate",
                     () -> new CrucibleKnightArmorItem(
                             ArmorItem.Type.CHESTPLATE,
-                            armorProperties(540, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.CHESTPLATE, 39, Rarity.EPIC)
                     )
             );
 
@@ -219,7 +224,7 @@ public final class ItemRegistry {
                     "crucible_knight_leggings",
                     () -> new CrucibleKnightArmorItem(
                             ArmorItem.Type.LEGGINGS,
-                            armorProperties(540, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.LEGGINGS, 39, Rarity.EPIC)
                     )
             );
 
@@ -228,7 +233,7 @@ public final class ItemRegistry {
                     "crucible_knight_boots",
                     () -> new CrucibleKnightArmorItem(
                             ArmorItem.Type.BOOTS,
-                            armorProperties(540, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.BOOTS, 39, Rarity.EPIC)
                     )
             );
 
@@ -241,7 +246,7 @@ public final class ItemRegistry {
                     "crucible_knight_variant_helmet",
                     () -> new CrucibleKnightVariantArmorItem(
                             ArmorItem.Type.HELMET,
-                            armorProperties(540, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.HELMET, 39, Rarity.EPIC)
                     )
             );
 
@@ -250,7 +255,7 @@ public final class ItemRegistry {
                     "crucible_knight_variant_chestplate",
                     () -> new CrucibleKnightVariantArmorItem(
                             ArmorItem.Type.CHESTPLATE,
-                            armorProperties(540, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.CHESTPLATE, 39, Rarity.EPIC)
                     )
             );
 
@@ -259,7 +264,7 @@ public final class ItemRegistry {
                     "crucible_knight_variant_leggings",
                     () -> new CrucibleKnightVariantArmorItem(
                             ArmorItem.Type.LEGGINGS,
-                            armorProperties(540, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.LEGGINGS, 39, Rarity.EPIC)
                     )
             );
 
@@ -268,7 +273,7 @@ public final class ItemRegistry {
                     "crucible_knight_variant_boots",
                     () -> new CrucibleKnightVariantArmorItem(
                             ArmorItem.Type.BOOTS,
-                            armorProperties(540, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.BOOTS, 39, Rarity.EPIC)
                     )
             );
 
@@ -281,7 +286,7 @@ public final class ItemRegistry {
                     "tree_sentinel_helmet",
                     () -> new TreeSentinelArmorItem(
                             ArmorItem.Type.HELMET,
-                            armorProperties(560, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.HELMET, 41, Rarity.EPIC)
                     )
             );
 
@@ -290,7 +295,7 @@ public final class ItemRegistry {
                     "tree_sentinel_chestplate",
                     () -> new TreeSentinelArmorItem(
                             ArmorItem.Type.CHESTPLATE,
-                            armorProperties(560, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.CHESTPLATE, 41, Rarity.EPIC)
                     )
             );
 
@@ -299,7 +304,7 @@ public final class ItemRegistry {
                     "tree_sentinel_leggings",
                     () -> new TreeSentinelArmorItem(
                             ArmorItem.Type.LEGGINGS,
-                            armorProperties(560, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.LEGGINGS, 41, Rarity.EPIC)
                     )
             );
 
@@ -308,7 +313,7 @@ public final class ItemRegistry {
                     "tree_sentinel_boots",
                     () -> new TreeSentinelArmorItem(
                             ArmorItem.Type.BOOTS,
-                            armorProperties(560, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.BOOTS, 41, Rarity.EPIC)
                     )
             );
 
@@ -321,7 +326,7 @@ public final class ItemRegistry {
                     "maliketh_helmet",
                     () -> new MalikethArmorItem(
                             ArmorItem.Type.HELMET,
-                            armorProperties(620, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.HELMET, 45, Rarity.EPIC)
                     )
             );
 
@@ -330,7 +335,7 @@ public final class ItemRegistry {
                     "maliketh_chestplate",
                     () -> new MalikethArmorItem(
                             ArmorItem.Type.CHESTPLATE,
-                            armorProperties(620, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.CHESTPLATE, 45, Rarity.EPIC)
                     )
             );
 
@@ -339,7 +344,7 @@ public final class ItemRegistry {
                     "maliketh_leggings",
                     () -> new MalikethArmorItem(
                             ArmorItem.Type.LEGGINGS,
-                            armorProperties(620, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.LEGGINGS, 45, Rarity.EPIC)
                     )
             );
 
@@ -348,7 +353,7 @@ public final class ItemRegistry {
                     "maliketh_boots",
                     () -> new MalikethArmorItem(
                             ArmorItem.Type.BOOTS,
-                            armorProperties(620, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.BOOTS, 45, Rarity.EPIC)
                     )
             );
 
@@ -362,7 +367,7 @@ public final class ItemRegistry {
                     "radahn_helmet",
                     () -> new RadahnArmorItem(
                             ArmorItem.Type.HELMET,
-                            armorProperties(660, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.HELMET, 48, Rarity.EPIC)
                     )
             );
 
@@ -371,7 +376,7 @@ public final class ItemRegistry {
                     "radahn_chestplate",
                     () -> new RadahnArmorItem(
                             ArmorItem.Type.CHESTPLATE,
-                            armorProperties(660, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.CHESTPLATE, 48, Rarity.EPIC)
                     )
             );
 
@@ -380,7 +385,7 @@ public final class ItemRegistry {
                     "radahn_leggings",
                     () -> new RadahnArmorItem(
                             ArmorItem.Type.LEGGINGS,
-                            armorProperties(660, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.LEGGINGS, 48, Rarity.EPIC)
                     )
             );
 
@@ -389,7 +394,7 @@ public final class ItemRegistry {
                     "radahn_boots",
                     () -> new RadahnArmorItem(
                             ArmorItem.Type.BOOTS,
-                            armorProperties(660, Rarity.EPIC)
+                            armorProperties(ArmorItem.Type.BOOTS, 48, Rarity.EPIC)
                     )
             );
 

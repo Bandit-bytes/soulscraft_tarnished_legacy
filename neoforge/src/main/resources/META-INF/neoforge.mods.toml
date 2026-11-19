@@ -8,8 +8,8 @@ modId = "soulscraft_tarnished_legacy"
 version = "${version}"
 displayName = "Tarnished Legacy"
 authors = "Bandit-Bytes, Pixel Dream Studios"
-description = '''Relics of fallen champions, reforged for the Tarnished. A standalone collection of animated armor inspired by Elden Ring.'''
-#logoFile = ""
+description = '''Relics of fallen champions, reforged for the Tarnished. A standalone collection of animated armor, weapons and shields inspired by Elden Ring.'''
+logoFile = "assets/soulscraft_tarnished_legacy/icon.png"
 
 [[dependencies.soulscraft_tarnished_legacy]]
 modId = "neoforge"
@@ -21,7 +21,7 @@ side = "BOTH"
 [[dependencies.soulscraft_tarnished_legacy]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.1,)"
+versionRange = "[1.21.1,1.21.2)"
 ordering = "NONE"
 side = "BOTH"
 

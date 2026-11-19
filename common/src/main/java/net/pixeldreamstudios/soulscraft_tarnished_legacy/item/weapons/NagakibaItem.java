@@ -1,9 +1,8 @@
 package net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Tier;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.effect.BloodLossEffect;
 
 public final class NagakibaItem extends TarnishedWeaponItem {
 
@@ -13,11 +12,6 @@ public final class NagakibaItem extends TarnishedWeaponItem {
 
     @Override
     protected void applyTrait(LivingEntity target, LivingEntity attacker) {
-        if (roll(attacker, 0.20F)) {
-            target.addEffect(
-                    new MobEffectInstance(MobEffects.WITHER, 100, 0),
-                    attacker
-            );
-        }
+        BloodLossEffect.addBuildup(target, attacker);
     }
 }

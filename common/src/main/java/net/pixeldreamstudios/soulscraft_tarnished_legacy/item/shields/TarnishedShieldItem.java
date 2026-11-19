@@ -3,11 +3,12 @@ package net.pixeldreamstudios.soulscraft_tarnished_legacy.item.shields;
 import java.util.List;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.TooltipFlag;
-
 
 public class TarnishedShieldItem extends ShieldItem {
     private final String shieldId;
@@ -38,6 +39,9 @@ public class TarnishedShieldItem extends ShieldItem {
         tooltip.add(Component.translatable(translationKey("trait.description"))
                 .withStyle(ChatFormatting.GRAY));
     }
+
+    /** Called server-side when {@code player} blocks an attack with this shield. */
+    public void onBlock(Player player, DamageSource source, float amount) {}
 
     @Override
     public boolean isValidRepairItem(ItemStack stack, ItemStack repairCandidate) {

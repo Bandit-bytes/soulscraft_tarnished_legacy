@@ -1,16 +1,18 @@
 package net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.sets;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.player.Player;
+import java.util.List;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.TarnishedArmorMaterials;
 
 public class BlaiddArmorItem extends TarnishedArmorItem {
- public BlaiddArmorItem(Type type, Item.Properties properties) {
-  super(TarnishedArmorMaterials.BLAIDD, type, properties, "blaidd");
- }
- @Override protected void applySetBonus(Player player) {
-  player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 40, 0, true, false, true));
- }
+    private static final String SET_ID = "blaidd";
+
+    public BlaiddArmorItem(Type type, Item.Properties properties) {
+        super(TarnishedArmorMaterials.BLAIDD, type, properties, SET_ID, List.of(
+                // Equivalent to Strength I (+3 attack damage).
+                setModifier(SET_ID, Attributes.ATTACK_DAMAGE, 3.0D, AttributeModifier.Operation.ADD_VALUE)
+        ));
+    }
 }

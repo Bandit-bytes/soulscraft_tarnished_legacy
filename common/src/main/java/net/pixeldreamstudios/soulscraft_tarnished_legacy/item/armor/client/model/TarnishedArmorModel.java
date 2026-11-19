@@ -18,10 +18,19 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
     private static final ResourceLocation EMPTY_ANIMATION =
             SoulsCraftTarnishedLegacy.resource("animations/armor/empty.animation.json");
 
+    // Per-tick smoothing rates (the old per-frame 0.09 / 0.08 at ~60 FPS is roughly this per tick).
+    private static final float TREE_SENTINEL_ROTATION_RATE = 0.25F;
+    private static final float TREE_SENTINEL_LIFT_RATE = 0.22F;
+
     private final ResourceLocation modelResource;
     private final ResourceLocation textureResource;
     private final CapeStyle capeStyle;
-    private final Map<Long, CapeSmoothingState> capeStates = new HashMap<>();
+    /**
+     * Smoothing state per wearer, keyed by entity id. GeckoLib's armor instance id can't be used:
+     * it is {@code (long) Math.pow(entityId, 7)}, which saturates for every entity id >= 512 and
+     * would make all wearers share one state.
+     */
+    private final Map<Integer, CapeSmoothingState> capeStates = new HashMap<>();
 
     public TarnishedArmorModel(ResourceLocation modelResource, ResourceLocation textureResource, CapeStyle capeStyle) {
         this.modelResource = modelResource;
@@ -75,11 +84,16 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
         ItemStack renderedStack = animationState.getData(DataTickets.ITEMSTACK);
         EquipmentSlot slot = animationState.getData(DataTickets.EQUIPMENT_SLOT);
 
+        // The same model renders every armor slot; only the chest render drives the cape.
+        if (slot != EquipmentSlot.CHEST || renderedStack == null) {
+            return;
+        }
+
         if (player == null
-                || renderedStack == null
-                || slot != EquipmentSlot.CHEST
                 || !ItemStack.isSameItemSameComponents(player.getItemBySlot(EquipmentSlot.CHEST), renderedStack)) {
-            this.capeStates.remove(instanceId);
+            if (player != null) {
+                this.capeStates.remove(player.getId());
+            }
             return;
         }
 
@@ -88,7 +102,7 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
         switch (this.capeStyle) {
             case BLAIDD -> animateBlaiddCape(cape, player, partialTick);
             case MALIKETH -> animateMalikethCape(cape, player, partialTick);
-            case TREE_SENTINEL -> animateTreeSentinelCape(cape, player, partialTick, instanceId);
+            case TREE_SENTINEL -> animateTreeSentinelCape(cape, player, partialTick);
             case NONE -> { }
         }
     }
@@ -168,7 +182,7 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
         cape.setRotZ(sidewaysSway / 180.0F);
     }
 
-    private void animateTreeSentinelCape(GeoBone cape, Player player, float partialTick, long instanceId) {
+    private void animateTreeSentinelCape(GeoBone cape, Player player, float partialTick) {
         float horizontalSpeed = (float)player.getDeltaMovement().horizontalDistance();
         float targetRotation = 0.0F;
         float targetLift = 0.0F;
@@ -190,9 +204,18 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
         targetRotation = Mth.clamp(targetRotation, 0.0F, 0.50F);
         targetLift = Mth.clamp(targetLift, 0.0F, 4.0F);
 
-        CapeSmoothingState state = this.capeStates.computeIfAbsent(instanceId, ignored -> new CapeSmoothingState());
-        state.rotation = Mth.lerp(0.09F, state.rotation, targetRotation);
-        state.lift = Mth.lerp(0.08F, state.lift, targetLift);
+        if (this.capeStates.size() > 64) {
+            // Wearers that left render distance never report back; drop stale entries.
+            this.capeStates.clear();
+        }
+        CapeSmoothingState state = this.capeStates.computeIfAbsent(player.getId(), ignored -> new CapeSmoothingState());
+        // Smooth over elapsed game time rather than per render call, so the cape moves at the same
+        // speed regardless of frame rate or how many times the player is drawn in a frame.
+        float time = player.tickCount + partialTick;
+        float elapsedTicks = Float.isNaN(state.lastTime) ? 0.0F : Mth.clamp(time - state.lastTime, 0.0F, 5.0F);
+        state.lastTime = time;
+        state.rotation = Mth.lerp(smoothingFactor(TREE_SENTINEL_ROTATION_RATE, elapsedTicks), state.rotation, targetRotation);
+        state.lift = Mth.lerp(smoothingFactor(TREE_SENTINEL_LIFT_RATE, elapsedTicks), state.lift, targetLift);
 
         float walkDistance = Mth.lerp(partialTick, player.walkDistO, player.walkDist);
         float walkAmount = Mth.lerp(partialTick, player.oBob, player.bob);
@@ -203,8 +226,14 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
         cape.setPosY(state.lift);
     }
 
+    /** Fraction of the remaining distance covered after {@code elapsedTicks} at {@code ratePerTick}. */
+    private static float smoothingFactor(float ratePerTick, float elapsedTicks) {
+        return 1.0F - (float) Math.pow(1.0F - ratePerTick, elapsedTicks);
+    }
+
     private static final class CapeSmoothingState {
         private float rotation;
         private float lift;
+        private float lastTime = Float.NaN;
     }
 }
