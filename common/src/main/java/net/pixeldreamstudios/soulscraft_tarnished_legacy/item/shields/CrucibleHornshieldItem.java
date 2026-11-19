@@ -12,10 +12,8 @@ public final class CrucibleHornshieldItem extends TarnishedShieldItem {
         super(properties, "crucible_shield", Items.GOLD_INGOT);
     }
 
-    /** Horned Bulwark: blocking a melee attack throws the attacker back. */
     @Override
     public void onBlock(Player player, DamageSource source, float amount) {
-        // Direct entity == causing entity means melee, not a projectile.
         if (source.getDirectEntity() instanceof LivingEntity attacker
                 && attacker == source.getEntity()
                 && attacker.distanceToSqr(player) <= MAX_REPEL_DISTANCE * MAX_REPEL_DISTANCE) {

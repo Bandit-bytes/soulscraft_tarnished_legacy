@@ -10,14 +10,12 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 
 public final class StarscourgeGreatswordItem extends TarnishedWeaponItem {
-
     public StarscourgeGreatswordItem(Tier tier, Properties properties) {
         super(tier, properties, "starscourge_greatsword", "colossal_sword");
     }
 
     @Override
     protected void applyTrait(LivingEntity target, LivingEntity attacker) {
-        // The Starscourge's trait is its right-click combo; see StarscourgeSkill.
     }
 
     @Override

@@ -13,7 +13,6 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacy;
 
 public final class TarnishedLootTableModifiers {
-
     private static final ResourceKey<LootTable> GHAST_LOOT =
             ResourceKey.create(
                     Registries.LOOT_TABLE,

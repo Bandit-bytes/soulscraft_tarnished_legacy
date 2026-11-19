@@ -11,8 +11,7 @@ public final class CrucibleGreatswordItem extends TarnishedWeaponItem {
     @Override
     protected void applyTrait(LivingEntity target, LivingEntity attacker) {
         if (roll(attacker, 0.25F)) {
-            // LivingEntity#knockback pushes the target *opposite* to (x, z), so pass attacker - target
-            // (the same convention vanilla uses) to launch the target away from the attacker.
+            // knockback() pushes away from (x, z), so pass attacker - target.
             target.knockback(1.25D, attacker.getX() - target.getX(), attacker.getZ() - target.getZ());
             target.hurtMarked = true;
         }

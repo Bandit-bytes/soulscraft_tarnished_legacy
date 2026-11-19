@@ -15,9 +15,6 @@ public class TreeSentinelArmorItem extends TarnishedArmorItem {
 
     @Override
     protected void applySetBonus(Player player) {
-        // Re-adding Absorption refills the hearts every time (since 1.20.2), so only grant a new
-        // instance once the previous one has run out: the hearts renew every 10 seconds rather
-        // than every second.
         if (!player.hasEffect(MobEffects.ABSORPTION)) {
             player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, ABSORPTION_TICKS, 0, true, false, true));
         }

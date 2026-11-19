@@ -11,7 +11,6 @@ public class MalikethArmorItem extends TarnishedArmorItem {
 
     public MalikethArmorItem(Type type, Item.Properties properties) {
         super(TarnishedArmorMaterials.MALIKETH, type, properties, SET_ID, List.of(
-                // Equivalent to Strength II (+6 attack damage).
                 setModifier(SET_ID, Attributes.ATTACK_DAMAGE, 6.0D, AttributeModifier.Operation.ADD_VALUE)
         ));
     }

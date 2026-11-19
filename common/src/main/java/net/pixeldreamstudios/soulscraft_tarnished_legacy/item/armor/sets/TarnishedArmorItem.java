@@ -30,7 +30,6 @@ import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class TarnishedArmorItem extends ArmorItem implements GeoItem {
-    /** Attribute modifiers granted by each set's full-set bonus, keyed by set id. */
     private static final Map<String, List<SetBonusModifier>> SET_MODIFIERS = new LinkedHashMap<>();
 
     private final String setId;
@@ -79,8 +78,6 @@ public class TarnishedArmorItem extends ArmorItem implements GeoItem {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        // Cape motion is calculated per render frame in TarnishedArmorModel.
-        // No keyframed animation controller is needed for the current armor sets.
     }
 
     @Override
@@ -100,27 +97,16 @@ public class TarnishedArmorItem extends ArmorItem implements GeoItem {
                 .withStyle(ChatFormatting.GRAY));
     }
 
-    /**
-     * Called every server tick while {@code player} wears the complete set. By default this applies
-     * {@link #applySetBonus(Player)} once per second.
-     */
     protected void tickFullSet(Player player) {
         if (player.tickCount % 20 == 0) {
             applySetBonus(player);
         }
     }
 
-    /** Periodic (once per second) full-set bonus, typically a short ambient effect. */
     protected void applySetBonus(Player player) {}
 
-    /** Called when a player wearing the complete set blocks an attack with a shield. */
     protected void onBlockedAttack(Player player, DamageSource source, float amount) {}
 
-    /**
-     * Server-side per-tick driver (called from a player tick event, so it also runs if the
-     * armor was just removed, dropped or destroyed). Keeps set-bonus attribute modifiers in sync
-     * with what the player is wearing and runs the active set's tick logic.
-     */
     public static void tickPlayer(Player player) {
         TarnishedArmorItem activeSet = getFullSet(player);
         String activeId = activeSet == null ? null : activeSet.setId;
@@ -153,7 +139,6 @@ public class TarnishedArmorItem extends ArmorItem implements GeoItem {
         }
     }
 
-    /** @return the chest piece of the complete set the entity is wearing, or null if none. */
     @Nullable
     public static TarnishedArmorItem getFullSet(LivingEntity entity) {
         if (!(entity.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof TarnishedArmorItem chest)) {

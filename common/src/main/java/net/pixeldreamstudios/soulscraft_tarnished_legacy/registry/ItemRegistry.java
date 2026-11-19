@@ -16,7 +16,6 @@ import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.shields.ErdtreeGre
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.weapons.*;
 
 public final class ItemRegistry {
-
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(
                     SoulsCraftTarnishedLegacy.MOD_ID,
@@ -26,10 +25,6 @@ public final class ItemRegistry {
     private ItemRegistry() {
     }
 
-    /**
-     * Durability scales per slot like vanilla armor ({@code Type#getDurability}): the multiplier is
-     * the vanilla-style material multiplier (netherite is 37).
-     */
     private static Item.Properties armorProperties(
             ArmorItem.Type type,
             int durabilityMultiplier,
@@ -76,10 +71,6 @@ public final class ItemRegistry {
                 .arch$tab(TabRegistry.TARNISHED_LEGACY_TAB);
     }
 
-    /*
-     * Night's Cavalry armor
-     */
-
     public static final RegistrySupplier<Item> NIGHT_RIDER_HELMET =
             ITEMS.register(
                     "night_rider_helmet",
@@ -115,10 +106,6 @@ public final class ItemRegistry {
                             armorProperties(ArmorItem.Type.BOOTS, 32, Rarity.RARE)
                     )
             );
-
-    /*
-     * Blaidd armor
-     */
 
     public static final RegistrySupplier<Item> BLAIDD_HELMET =
             ITEMS.register(
@@ -156,10 +143,6 @@ public final class ItemRegistry {
                     )
             );
 
-    /*
-     * Ronin armor
-     */
-
     public static final RegistrySupplier<Item> RONIN_HELMET =
             ITEMS.register(
                     "ronin_helmet",
@@ -195,11 +178,6 @@ public final class ItemRegistry {
                             armorProperties(ArmorItem.Type.BOOTS, 35, Rarity.RARE)
                     )
             );
-
-
-    /*
-     * Crucible Axe armor
-     */
 
     public static final RegistrySupplier<Item> CRUCIBLE_KNIGHT_HELMET =
             ITEMS.register(
@@ -237,10 +215,6 @@ public final class ItemRegistry {
                     )
             );
 
-    /*
-     * Crucible Tree armor
-     */
-
     public static final RegistrySupplier<Item> CRUCIBLE_TREE_HELMET =
             ITEMS.register(
                     "crucible_knight_variant_helmet",
@@ -276,10 +250,6 @@ public final class ItemRegistry {
                             armorProperties(ArmorItem.Type.BOOTS, 39, Rarity.EPIC)
                     )
             );
-
-    /*
-     * Tree Sentinel armor
-     */
 
     public static final RegistrySupplier<Item> TREE_SENTINEL_HELMET =
             ITEMS.register(
@@ -317,10 +287,6 @@ public final class ItemRegistry {
                     )
             );
 
-    /*
-     * Maliketh armor
-     */
-
     public static final RegistrySupplier<Item> MALIKETH_HELMET =
             ITEMS.register(
                     "maliketh_helmet",
@@ -357,11 +323,6 @@ public final class ItemRegistry {
                     )
             );
 
-
-    /*
-     * General Radahn armor
-     */
-
     public static final RegistrySupplier<Item> RADAHN_HELMET =
             ITEMS.register(
                     "radahn_helmet",
@@ -397,7 +358,6 @@ public final class ItemRegistry {
                             armorProperties(ArmorItem.Type.BOOTS, 48, Rarity.EPIC)
                     )
             );
-
 
     public static final RegistrySupplier<Item> NIGHT_CAVALRY_INSIGNIA =
             ITEMS.register(
@@ -453,7 +413,6 @@ public final class ItemRegistry {
                     )
             );
 
-
     public static final RegistrySupplier<Item> FALLINGSTAR_REMNANT =
             ITEMS.register(
                     "fallingstar_remnant",
@@ -462,7 +421,6 @@ public final class ItemRegistry {
                             "fallingstar_remnant"
                     )
             );
-
 
     public static final RegistrySupplier<Item> NIGHT_RIDER_GLAIVE =
             ITEMS.register(
@@ -548,7 +506,6 @@ public final class ItemRegistry {
                     )
             );
 
-
     public static final RegistrySupplier<Item> STARSCOURGE_GREATSWORD =
             ITEMS.register(
                     "starscourge_greatsword",
@@ -562,7 +519,6 @@ public final class ItemRegistry {
                             )
                     )
             );
-
 
     public static final RegistrySupplier<Item> CRUCIBLE_SHIELD =
             ITEMS.register(

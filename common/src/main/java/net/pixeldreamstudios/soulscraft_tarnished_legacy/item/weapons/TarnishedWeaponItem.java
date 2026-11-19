@@ -9,7 +9,6 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 
-
 public abstract class TarnishedWeaponItem extends SwordItem {
     private final String weaponId;
     private final String weaponClass;

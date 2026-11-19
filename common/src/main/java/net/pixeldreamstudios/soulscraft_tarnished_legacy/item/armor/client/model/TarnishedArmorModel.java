@@ -18,18 +18,13 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
     private static final ResourceLocation EMPTY_ANIMATION =
             SoulsCraftTarnishedLegacy.resource("animations/armor/empty.animation.json");
 
-    // Per-tick smoothing rates (the old per-frame 0.09 / 0.08 at ~60 FPS is roughly this per tick).
     private static final float TREE_SENTINEL_ROTATION_RATE = 0.25F;
     private static final float TREE_SENTINEL_LIFT_RATE = 0.22F;
 
     private final ResourceLocation modelResource;
     private final ResourceLocation textureResource;
     private final CapeStyle capeStyle;
-    /**
-     * Smoothing state per wearer, keyed by entity id. GeckoLib's armor instance id can't be used:
-     * it is {@code (long) Math.pow(entityId, 7)}, which saturates for every entity id >= 512 and
-     * would make all wearers share one state.
-     */
+    // Keyed by entity id: GeckoLib's armor instance id collides for entity ids >= 512.
     private final Map<Integer, CapeSmoothingState> capeStates = new HashMap<>();
 
     public TarnishedArmorModel(ResourceLocation modelResource, ResourceLocation textureResource, CapeStyle capeStyle) {
@@ -61,9 +56,6 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
             long instanceId,
             AnimationState<TarnishedArmorItem> animationState
     ) {
-        // Radahn's Blockbench model was authored with an additional head-space transform.
-        // The tracking bone is now vanilla-centered in the geo; this visual child keeps the
-        // intended silhouette while trimming the oversized helmet slightly.
         GeoBone radahnHeadVisual = getBone("radahnHeadVisual").orElse(null);
         if (radahnHeadVisual != null) {
             radahnHeadVisual.updateScale(0.86F, 0.86F, 0.86F);
@@ -84,7 +76,6 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
         ItemStack renderedStack = animationState.getData(DataTickets.ITEMSTACK);
         EquipmentSlot slot = animationState.getData(DataTickets.EQUIPMENT_SLOT);
 
-        // The same model renders every armor slot; only the chest render drives the cape.
         if (slot != EquipmentSlot.CHEST || renderedStack == null) {
             return;
         }
@@ -205,12 +196,9 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
         targetLift = Mth.clamp(targetLift, 0.0F, 4.0F);
 
         if (this.capeStates.size() > 64) {
-            // Wearers that left render distance never report back; drop stale entries.
             this.capeStates.clear();
         }
         CapeSmoothingState state = this.capeStates.computeIfAbsent(player.getId(), ignored -> new CapeSmoothingState());
-        // Smooth over elapsed game time rather than per render call, so the cape moves at the same
-        // speed regardless of frame rate or how many times the player is drawn in a frame.
         float time = player.tickCount + partialTick;
         float elapsedTicks = Float.isNaN(state.lastTime) ? 0.0F : Mth.clamp(time - state.lastTime, 0.0F, 5.0F);
         state.lastTime = time;
@@ -226,7 +214,6 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
         cape.setPosY(state.lift);
     }
 
-    /** Fraction of the remaining distance covered after {@code elapsedTicks} at {@code ratePerTick}. */
     private static float smoothingFactor(float ratePerTick, float elapsedTicks) {
         return 1.0F - (float) Math.pow(1.0F - ratePerTick, elapsedTicks);
     }

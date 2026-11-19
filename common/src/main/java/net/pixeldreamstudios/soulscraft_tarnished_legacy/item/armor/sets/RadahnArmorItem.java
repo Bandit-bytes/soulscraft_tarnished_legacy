@@ -15,17 +15,12 @@ import net.minecraft.world.phys.Vec3;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.TarnishedArmorMaterials;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.util.CombatHelper;
 
-/**
- * Full set: "Gravity Crash". Landing after a fall of {@link #MIN_FALL_DISTANCE}+ blocks releases a
- * shockwave that damages and launches nearby enemies.
- */
 public final class RadahnArmorItem extends TarnishedArmorItem {
     private static final float MIN_FALL_DISTANCE = 4.0F;
     private static final double RADIUS = 4.0D;
     private static final float MIN_DAMAGE = 4.0F;
     private static final float MAX_DAMAGE = 14.0F;
 
-    /** Fall distance from each player's last airborne tick. Server thread only. */
     private static final Map<Player, Float> LAST_AIRBORNE_FALL = new WeakHashMap<>();
 
     public RadahnArmorItem(Type type, Item.Properties properties) {
@@ -37,8 +32,6 @@ public final class RadahnArmorItem extends TarnishedArmorItem {
         super.tickFullSet(player);
 
         if (!player.onGround()) {
-            // Record every airborne tick (including 0 after water/slow-falling resets the fall),
-            // because vanilla clears fallDistance on landing before this tick runs.
             LAST_AIRBORNE_FALL.put(player, player.fallDistance);
             return;
         }

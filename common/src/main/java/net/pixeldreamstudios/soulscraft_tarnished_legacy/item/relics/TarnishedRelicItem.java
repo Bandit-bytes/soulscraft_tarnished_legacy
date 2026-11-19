@@ -7,7 +7,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 
-
 public final class TarnishedRelicItem extends Item {
     private final String relicId;
 
@@ -16,15 +15,7 @@ public final class TarnishedRelicItem extends Item {
         this.relicId = relicId;
     }
 
-    /*
-     * Crafting remainder hooks. These deliberately have no @Override: the common module only sees
-     * vanilla, but at runtime they override the loader hooks of the same name and signature:
-     *   - Fabric:   FabricItem#getRecipeRemainder(ItemStack)
-     *   - NeoForge: IItemExtension#hasCraftingRemainingItem(ItemStack) / getCraftingRemainingItem(ItemStack)
-     * Renaming them, or a loader renaming its hook, silently disables the "relic loses 1 durability
-     * per craft" behaviour, so re-check these after loader updates.
-     */
-
+    // No @Override: these match the Fabric (FabricItem) and NeoForge (IItemExtension) remainder hooks by name.
     public ItemStack getRecipeRemainder(ItemStack stack) {
         return damagedCraftingRemainder(stack);
     }

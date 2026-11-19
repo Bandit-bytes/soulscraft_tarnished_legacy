@@ -7,13 +7,11 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacy;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacyClient;
 
-// FMLClientSetupEvent is a mod-bus event; NeoForge routes it to the mod bus automatically.
 @EventBusSubscriber(
         modid = SoulsCraftTarnishedLegacy.MOD_ID,
         value = Dist.CLIENT
 )
 public final class SoulsCraftTarnishedLegacyNeoForgeClient {
-
     private SoulsCraftTarnishedLegacyNeoForgeClient() {}
 
     @SubscribeEvent

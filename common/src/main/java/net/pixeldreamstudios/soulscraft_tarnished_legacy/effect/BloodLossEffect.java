@@ -13,11 +13,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.registry.EffectRegistry;
 import org.joml.Vector3f;
 
-/**
- * Marker effect that tracks Blood Loss build-up. Each application adds a stack (stored in the
- * amplifier); reaching {@link #STACKS_TO_BURST} consumes the build-up and deals a burst of damage
- * proportional to the target's max health.
- */
 public final class BloodLossEffect extends MobEffect {
     public static final int STACKS_TO_BURST = 4;
     public static final int BUILDUP_DURATION_TICKS = 100;
@@ -49,7 +44,6 @@ public final class BloodLossEffect extends MobEffect {
         target.removeEffect(effect);
 
         float damage = Mth.clamp(target.getMaxHealth() * BURST_MAX_HEALTH_FRACTION, BURST_MIN_DAMAGE, BURST_MAX_DAMAGE);
-        // The triggering melee hit just granted i-frames; clear them so the burst always lands.
         target.invulnerableTime = 0;
         target.hurt(target.damageSources().indirectMagic(attacker, attacker), damage);
 

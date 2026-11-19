@@ -7,11 +7,12 @@ import net.minecraft.world.item.Item;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.TarnishedArmorMaterials;
 
 public class CrucibleKnightVariantArmorItem extends TarnishedArmorItem {
+    public CrucibleKnightVariantArmorItem(Type type, Item.Properties properties) {
+        super(TarnishedArmorMaterials.CRUCIBLE_TREE, type, properties, "crucible_tree");
+    }
 
- public CrucibleKnightVariantArmorItem(Type type, Item.Properties properties) {
-  super(TarnishedArmorMaterials.CRUCIBLE_TREE, type, properties, "crucible_tree");
- }
- @Override protected void applySetBonus(Player player) {
-  player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 40, 0, true, false, true));
- }
+    @Override
+    protected void applySetBonus(Player player) {
+        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 40, 0, true, false, true));
+    }
 }

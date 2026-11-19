@@ -40,7 +40,6 @@ public class TarnishedShieldItem extends ShieldItem {
                 .withStyle(ChatFormatting.GRAY));
     }
 
-    /** Called server-side when {@code player} blocks an attack with this shield. */
     public void onBlock(Player player, DamageSource source, float amount) {}
 
     @Override

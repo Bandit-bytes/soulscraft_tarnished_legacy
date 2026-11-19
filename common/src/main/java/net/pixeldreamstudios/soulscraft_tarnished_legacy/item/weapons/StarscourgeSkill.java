@@ -23,13 +23,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.util.CombatHelper;
 
-/**
- * Server-side state and logic for the Starscourge Greatsword's three-stage light combo.
- *
- * <p>State lives here (not on the item singleton) so it can be ticked from the server tick
- * regardless of where the sword is, cleared when a player leaves, and wiped when the server stops
- * so nothing leaks between single-player worlds. Timing uses the server's own tick counter.
- */
 public final class StarscourgeSkill {
     static final int COMBO_WINDOW_TICKS = 28;
     static final int MIN_STAGE_DELAY_TICKS = 5;
@@ -41,7 +34,6 @@ public final class StarscourgeSkill {
 
     private StarscourgeSkill() {}
 
-    /** @return true if a slash was performed. */
     static boolean tryActivate(ServerPlayer player, Item item, InteractionHand hand) {
         long now = player.server.getTickCount();
         UUID playerId = player.getUUID();
@@ -52,7 +44,6 @@ public final class StarscourgeSkill {
         }
 
         int stage = state == null ? 1 : state.nextStage();
-        // The abandoned-combo cooldown is measured from the opening slash.
         long cooldownEnd = state == null ? now + ABANDONED_COMBO_COOLDOWN_TICKS : state.cooldownEnd();
 
         player.swing(hand, true);
@@ -78,7 +69,6 @@ public final class StarscourgeSkill {
         long now = server.getTickCount();
 
         if (!PENDING_IMPACTS.isEmpty()) {
-            // Copy first: an impact may kill something whose death triggers more combat logic.
             List<PendingImpact> due = new ArrayList<>();
             PENDING_IMPACTS.removeIf(impact -> {
                 if (now >= impact.executeAt()) {
@@ -104,7 +94,6 @@ public final class StarscourgeSkill {
                     continue;
                 }
                 it.remove();
-                // Combo abandoned: hand the remaining cooldown to vanilla so the client sees it too.
                 ServerPlayer player = server.getPlayerList().getPlayer(entry.getKey());
                 long remaining = state.cooldownEnd() - now;
                 if (player != null && remaining > 0) {
@@ -216,7 +205,6 @@ public final class StarscourgeSkill {
                 continue;
             }
 
-            // Each stage is a distinct strike: don't let the previous stage's i-frames swallow it.
             target.invulnerableTime = 0;
             target.hurt(level.damageSources().playerAttack(player), damage);
 

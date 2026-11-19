@@ -13,7 +13,6 @@ public final class ErdtreeGreatshieldItem extends TarnishedShieldItem {
         super(properties, "tree_sentinel_shield", Items.GOLD_INGOT);
     }
 
-    /** Golden Bulwark: blocking grants brief Absorption (not refreshed while it's still active). */
     @Override
     public void onBlock(Player player, DamageSource source, float amount) {
         if (!player.hasEffect(MobEffects.ABSORPTION)) {

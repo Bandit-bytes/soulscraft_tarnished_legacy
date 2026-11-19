@@ -14,7 +14,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 public final class TarnishedArmorMaterialRegistry {
     private TarnishedArmorMaterialRegistry() {
-
     }
     public static Holder<ArmorMaterial> register(String modId, String id, EnumMap<ArmorItem.Type,Integer> protection, int enchantability, Holder<SoundEvent> sound, float toughness, float knockback, Supplier<Ingredient> repair) {
         EnumMap<ArmorItem.Type,Integer> values = new EnumMap<>(ArmorItem.Type.class);

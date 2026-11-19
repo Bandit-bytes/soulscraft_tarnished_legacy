@@ -11,7 +11,6 @@ public final class EffectRegistry {
     public static final DeferredRegister<MobEffect> EFFECTS =
             DeferredRegister.create(SoulsCraftTarnishedLegacy.MOD_ID, Registries.MOB_EFFECT);
 
-    /** Blood Loss build-up. The amplifier is the number of stacks minus one. */
     public static final RegistrySupplier<MobEffect> BLOOD_LOSS =
             EFFECTS.register("blood_loss", BloodLossEffect::new);
 

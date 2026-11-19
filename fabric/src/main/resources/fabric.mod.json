@@ -8,7 +8,12 @@
     "Bandit-Bytes",
     "Pixel Dream Studios"
   ],
-  "license": "GPL-3.0",
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/soulscraft-tarnished-legacy",
+    "sources": "https://github.com/Bandit-bytes/soulscraft_tarnished_legacy",
+    "issues": "https://github.com/Bandit-bytes/soulscraft_tarnished_legacy/issues"
+  },
+  "license": "ARR",
   "icon": "assets/soulscraft_tarnished_legacy/icon.png",
   "environment": "*",
   "entrypoints": {
