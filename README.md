@@ -6,13 +6,13 @@
 
 <p align="center">
   <em>Relics of fallen champions, reforged for the Tarnished.</em><br>
-  Animated armor, legendary weapons and greatshields inspired by Elden Ring, for Minecraft 1.21.1.
+  Animated armor, legendary weapons and greatshields inspired by Elden Ring, for Minecraft 1.21.1 and 1.20.1.
 </p>
 
 <p align="center">
   <a href="https://www.curseforge.com/minecraft/mc-mods/soulscraft-tarnished-legacy"><img src="https://img.shields.io/badge/Download-CurseForge-F16436?logo=curseforge&logoColor=white" alt="Download on CurseForge"></a>
-  <img src="https://img.shields.io/badge/Minecraft-1.21.1-62B47A" alt="Minecraft 1.21.1">
-  <img src="https://img.shields.io/badge/Loaders-Fabric%20%7C%20NeoForge-blue" alt="Fabric and NeoForge">
+  <img src="https://img.shields.io/badge/Minecraft-1.21.1%20%7C%201.20.1-62B47A" alt="Minecraft 1.21.1 and 1.20.1">
+  <img src="https://img.shields.io/badge/Loaders-Fabric%20%7C%20NeoForge%20%7C%20Forge-blue" alt="Fabric, NeoForge and Forge">
 </p>
 
 <p align="center">
@@ -100,11 +100,18 @@ Deaths from Blood Loss, Gravity Crash and the Starscourge's light have their own
 
 ## Installation
 
-Download the mod from **[CurseForge](https://www.curseforge.com/minecraft/mc-mods/soulscraft-tarnished-legacy)** and install it, together with its dependencies, into a Minecraft **1.21.1** instance.
+Download the mod from **[CurseForge](https://www.curseforge.com/minecraft/mc-mods/soulscraft-tarnished-legacy)** and install it, together with its dependencies. Pick the file for your Minecraft version and loader.
+
+| Minecraft | Loaders | Java | Status |
+|---|---|---|---|
+| **1.21.1** | Fabric, NeoForge | 21 | Release |
+| **1.20.1** | Fabric, Forge | 17 | Beta |
+
+Both versions have the same armor, weapons, shields, set bonuses and advancements. On 1.20.1, Radahn's Gravity Crash uses the explosion sound because the mace sounds don't exist in that version.
 
 **Required**
 
-- [Fabric Loader](https://fabricmc.net/) with [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api), **or** [NeoForge](https://neoforged.net/)
+- [Fabric Loader](https://fabricmc.net/) with [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api), **or** [NeoForge](https://neoforged.net/) (1.21.1) / [Forge](https://files.minecraftforge.net/) (1.20.1)
 - [Architectury API](https://www.curseforge.com/minecraft/mc-mods/architectury-api)
 - [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/geckolib)
 
@@ -114,13 +121,18 @@ Download the mod from **[CurseForge](https://www.curseforge.com/minecraft/mc-mod
 
 ## Building from source
 
-Requires JDK 21.
+Each Minecraft version lives on its own branch:
+
+| Branch | Minecraft | JDK | Jars written to |
+|---|---|---|---|
+| [`main`](https://github.com/Bandit-bytes/soulscraft_tarnished_legacy/tree/main) | 1.21.1 | 21 | `fabric/build/libs/`, `neoforge/build/libs/` |
+| [`1.20.1`](https://github.com/Bandit-bytes/soulscraft_tarnished_legacy/tree/1.20.1) | 1.20.1 | 17 or newer | `fabric/build/libs/`, `forge/build/libs/` |
+
+Check out the branch you want, then run:
 
 ```sh
 ./gradlew build
 ```
-
-The built jars are written to `fabric/build/libs/` and `neoforge/build/libs/`.
 
 ## Reporting issues
 
