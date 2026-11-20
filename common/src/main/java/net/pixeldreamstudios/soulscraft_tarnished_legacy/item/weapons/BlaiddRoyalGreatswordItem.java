@@ -6,8 +6,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Tier;
 
 public final class BlaiddRoyalGreatswordItem extends TarnishedWeaponItem {
-    public BlaiddRoyalGreatswordItem(Tier tier, Properties properties) {
-        super(tier, properties, "blaidd_royal_greatsword", "colossal_greatsword");
+    public BlaiddRoyalGreatswordItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
+        super(tier, attackDamage, attackSpeed, properties, "blaidd_royal_greatsword", "colossal_greatsword");
     }
 
     @Override

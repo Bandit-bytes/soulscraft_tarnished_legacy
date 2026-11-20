@@ -1,0 +1,33 @@
+{
+  "parent": "soulscraft_tarnished_legacy:tarnished_legacy/reforged",
+  "display": {
+    "icon": {
+      "item": "soulscraft_tarnished_legacy:radahn_helmet"
+    },
+    "title": {
+      "translate": "advancements.soulscraft_tarnished_legacy.gravity_crash.title"
+    },
+    "description": {
+      "translate": "advancements.soulscraft_tarnished_legacy.gravity_crash.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "gravity_crash_kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "killing_blow": {
+          "tags": [
+            {
+              "id": "soulscraft_tarnished_legacy:gravity_crash",
+              "expected": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

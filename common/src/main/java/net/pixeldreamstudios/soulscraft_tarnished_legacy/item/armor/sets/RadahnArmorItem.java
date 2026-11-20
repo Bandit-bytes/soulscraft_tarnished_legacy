@@ -74,6 +74,6 @@ public final class RadahnArmorItem extends TarnishedArmorItem {
                     3, 0.1D, 0.1D, 0.1D, 0.4D);
         }
         level.playSound(null, center.x, center.y, center.z,
-                SoundEvents.MACE_SMASH_GROUND_HEAVY, SoundSource.PLAYERS, 1.2F, 0.7F);
+                SoundEvents.GENERIC_EXPLODE, SoundSource.PLAYERS, 0.9F, 0.7F);
     }
 }

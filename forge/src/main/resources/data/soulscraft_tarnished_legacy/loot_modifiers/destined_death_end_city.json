@@ -1,0 +1,10 @@
+{
+  "type": "soulscraft_tarnished_legacy:add_table",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/end_city_treasure"
+    }
+  ],
+  "table": "soulscraft_tarnished_legacy:injections/destined_death_fragment"
+}

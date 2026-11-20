@@ -10,8 +10,8 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 
 public final class StarscourgeGreatswordItem extends TarnishedWeaponItem {
-    public StarscourgeGreatswordItem(Tier tier, Properties properties) {
-        super(tier, properties, "starscourge_greatsword", "colossal_sword");
+    public StarscourgeGreatswordItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
+        super(tier, attackDamage, attackSpeed, properties, "starscourge_greatsword", "colossal_sword");
     }
 
     @Override

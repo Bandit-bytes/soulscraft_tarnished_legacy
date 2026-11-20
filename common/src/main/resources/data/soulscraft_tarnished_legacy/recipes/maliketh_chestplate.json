@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "M M",
+    "MRM",
+    "MSM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "R": {
+      "item": "soulscraft_tarnished_legacy:destined_death_fragment"
+    },
+    "S": {
+      "item": "minecraft:echo_shard"
+    }
+  },
+  "result": {
+    "item": "soulscraft_tarnished_legacy:maliketh_chestplate",
+    "count": 1
+  }
+}

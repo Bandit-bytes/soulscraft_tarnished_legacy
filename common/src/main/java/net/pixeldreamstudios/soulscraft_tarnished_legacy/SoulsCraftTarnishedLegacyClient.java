@@ -6,7 +6,7 @@ import net.minecraft.world.item.Item;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.registry.ItemRegistry;
 
 public final class SoulsCraftTarnishedLegacyClient {
-    private static final ResourceLocation BLOCKING = ResourceLocation.withDefaultNamespace("blocking");
+    private static final ResourceLocation BLOCKING = new ResourceLocation("blocking");
 
     private SoulsCraftTarnishedLegacyClient() {}
 

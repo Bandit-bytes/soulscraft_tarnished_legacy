@@ -6,8 +6,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Tier;
 
 public final class TreeSentinelHalberdItem extends TarnishedWeaponItem {
-    public TreeSentinelHalberdItem(Tier tier, Properties properties) {
-        super(tier, properties, "tree_sentinel_halberd", "halberd");
+    public TreeSentinelHalberdItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
+        super(tier, attackDamage, attackSpeed, properties, "tree_sentinel_halberd", "halberd");
     }
 
     @Override

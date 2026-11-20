@@ -6,13 +6,13 @@
 
 <p align="center">
   <em>Relics of fallen champions, reforged for the Tarnished.</em><br>
-  Animated armor, legendary weapons and greatshields inspired by Elden Ring, for Minecraft 1.21.1.
+  Animated armor, legendary weapons and greatshields inspired by Elden Ring, for Minecraft 1.20.1.
 </p>
 
 <p align="center">
   <a href="https://www.curseforge.com/minecraft/mc-mods/soulscraft-tarnished-legacy"><img src="https://img.shields.io/badge/Download-CurseForge-F16436?logo=curseforge&logoColor=white" alt="Download on CurseForge"></a>
-  <img src="https://img.shields.io/badge/Minecraft-1.21.1-62B47A" alt="Minecraft 1.21.1">
-  <img src="https://img.shields.io/badge/Loaders-Fabric%20%7C%20NeoForge-blue" alt="Fabric and NeoForge">
+  <img src="https://img.shields.io/badge/Minecraft-1.20.1-62B47A" alt="Minecraft 1.20.1">
+  <img src="https://img.shields.io/badge/Loaders-Fabric%20%7C%20Forge-blue" alt="Fabric and Forge">
 </p>
 
 <p align="center">
@@ -100,11 +100,11 @@ Deaths from Blood Loss, Gravity Crash and the Starscourge's light have their own
 
 ## Installation
 
-Download the mod from **[CurseForge](https://www.curseforge.com/minecraft/mc-mods/soulscraft-tarnished-legacy)** and install it, together with its dependencies, into a Minecraft **1.21.1** instance.
+Download the mod from **[CurseForge](https://www.curseforge.com/minecraft/mc-mods/soulscraft-tarnished-legacy)** and install it, together with its dependencies, into a Minecraft **1.20.1** instance.
 
 **Required**
 
-- [Fabric Loader](https://fabricmc.net/) with [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api), **or** [NeoForge](https://neoforged.net/)
+- [Fabric Loader](https://fabricmc.net/) with [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api), **or** [Forge](https://files.minecraftforge.net/)
 - [Architectury API](https://www.curseforge.com/minecraft/mc-mods/architectury-api)
 - [GeckoLib](https://www.curseforge.com/minecraft/mc-mods/geckolib)
 
@@ -114,13 +114,13 @@ Download the mod from **[CurseForge](https://www.curseforge.com/minecraft/mc-mod
 
 ## Building from source
 
-Requires JDK 21.
+Requires JDK 17 or newer.
 
 ```sh
 ./gradlew build
 ```
 
-The built jars are written to `fabric/build/libs/` and `neoforge/build/libs/`.
+The built jars are written to `fabric/build/libs/` and `forge/build/libs/`.
 
 ## Reporting issues
 

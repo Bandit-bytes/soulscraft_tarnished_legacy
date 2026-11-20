@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soul_in_a_bottle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulscraft_tarnished_legacy:soul_in_a_bottle"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "soulscraft_tarnished_legacy:ronin_helmet"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soul_in_a_bottle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulscraft_tarnished_legacy:ronin_helmet"
+    ]
+  }
+}

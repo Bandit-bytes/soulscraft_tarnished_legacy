@@ -4,8 +4,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Tier;
 
 public final class CrucibleGreatswordItem extends TarnishedWeaponItem {
-    public CrucibleGreatswordItem(Tier tier, Properties properties) {
-        super(tier, properties, "crucible_greatsword", "greatsword");
+    public CrucibleGreatswordItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
+        super(tier, attackDamage, attackSpeed, properties, "crucible_greatsword", "greatsword");
     }
 
     @Override

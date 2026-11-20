@@ -1,6 +1,5 @@
 package net.pixeldreamstudios.soulscraft_tarnished_legacy.effect;
 
-import net.minecraft.core.Holder;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -33,7 +32,7 @@ public final class BloodLossEffect extends MobEffect {
             return;
         }
 
-        Holder<MobEffect> effect = EffectRegistry.BLOOD_LOSS;
+        MobEffect effect = EffectRegistry.BLOOD_LOSS.get();
         MobEffectInstance current = target.getEffect(effect);
         int stacks = current == null ? 1 : current.getAmplifier() + 2;
 

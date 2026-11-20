@@ -1,0 +1,10 @@
+{
+  "type": "soulscraft_tarnished_legacy:add_table",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/ancient_city_ice_box"
+    }
+  ],
+  "table": "soulscraft_tarnished_legacy:injections/destined_death_fragment"
+}

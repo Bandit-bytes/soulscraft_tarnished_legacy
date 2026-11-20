@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "M M",
+    "MRM",
+    "MSM"
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:gold_ingot"
+    },
+    "R": {
+      "item": "soulscraft_tarnished_legacy:crucible_scale"
+    },
+    "S": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "result": {
+    "item": "soulscraft_tarnished_legacy:crucible_knight_variant_chestplate",
+    "count": 1
+  }
+}

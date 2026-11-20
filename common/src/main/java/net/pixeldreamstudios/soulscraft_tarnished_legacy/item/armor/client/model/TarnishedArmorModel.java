@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacy;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.sets.TarnishedArmorItem;
-import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.model.GeoModel;
@@ -81,7 +81,7 @@ public final class TarnishedArmorModel extends GeoModel<TarnishedArmorItem> {
         }
 
         if (player == null
-                || !ItemStack.isSameItemSameComponents(player.getItemBySlot(EquipmentSlot.CHEST), renderedStack)) {
+                || !ItemStack.isSameItemSameTags(player.getItemBySlot(EquipmentSlot.CHEST), renderedStack)) {
             if (player != null) {
                 this.capeStates.remove(player.getId());
             }

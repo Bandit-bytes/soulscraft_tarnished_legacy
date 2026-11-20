@@ -6,8 +6,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Tier;
 
 public final class NightRiderGlaiveItem extends TarnishedWeaponItem {
-    public NightRiderGlaiveItem(Tier tier, Properties properties) {
-        super(tier, properties, "night_rider_glaive", "glaive");
+    public NightRiderGlaiveItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
+        super(tier, attackDamage, attackSpeed, properties, "night_rider_glaive", "glaive");
     }
 
     @Override

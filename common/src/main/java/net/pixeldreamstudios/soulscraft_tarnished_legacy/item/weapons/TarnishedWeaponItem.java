@@ -8,20 +8,29 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class TarnishedWeaponItem extends SwordItem {
     private final String weaponId;
     private final String weaponClass;
 
-    protected TarnishedWeaponItem(Tier tier, Properties properties, String weaponId, String weaponClass) {
-        super(tier, properties);
+    protected TarnishedWeaponItem(
+            Tier tier,
+            int attackDamage,
+            float attackSpeed,
+            Properties properties,
+            String weaponId,
+            String weaponClass
+    ) {
+        super(tier, attackDamage, attackSpeed, properties);
         this.weaponId = weaponId;
         this.weaponClass = weaponClass;
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(stack, context, tooltip, flag);
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
         tooltip.add(Component.translatable(
                 "tooltip.soulscraft_tarnished_legacy.weapon_class",
                 Component.translatable("weapon_class.soulscraft_tarnished_legacy." + weaponClass)

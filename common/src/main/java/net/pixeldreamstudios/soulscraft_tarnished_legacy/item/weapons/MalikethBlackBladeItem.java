@@ -6,8 +6,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Tier;
 
 public final class MalikethBlackBladeItem extends TarnishedWeaponItem {
-    public MalikethBlackBladeItem(Tier tier, Properties properties) {
-        super(tier, properties, "maliketh_black_blade", "colossal_sword");
+    public MalikethBlackBladeItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
+        super(tier, attackDamage, attackSpeed, properties, "maliketh_black_blade", "colossal_sword");
     }
 
     @Override

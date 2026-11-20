@@ -11,7 +11,7 @@ public class BlaiddArmorItem extends TarnishedArmorItem {
 
     public BlaiddArmorItem(Type type, Item.Properties properties) {
         super(TarnishedArmorMaterials.BLAIDD, type, properties, SET_ID, List.of(
-                setModifier(SET_ID, Attributes.ATTACK_DAMAGE, 3.0D, AttributeModifier.Operation.ADD_VALUE)
+                setModifier(SET_ID, Attributes.ATTACK_DAMAGE, 3.0D, AttributeModifier.Operation.ADDITION)
         ));
     }
 }

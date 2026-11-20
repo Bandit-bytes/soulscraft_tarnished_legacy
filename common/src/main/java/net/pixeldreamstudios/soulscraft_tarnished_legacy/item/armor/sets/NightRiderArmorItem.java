@@ -15,7 +15,7 @@ public class NightRiderArmorItem extends TarnishedArmorItem {
 
     public NightRiderArmorItem(Type type, Item.Properties properties) {
         super(TarnishedArmorMaterials.NIGHT_RIDER, type, properties, SET_ID, List.of(
-                setModifier(SET_ID, Attributes.MOVEMENT_SPEED, 0.20D, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+                setModifier(SET_ID, Attributes.MOVEMENT_SPEED, 0.20D, AttributeModifier.Operation.MULTIPLY_TOTAL)
         ));
     }
 

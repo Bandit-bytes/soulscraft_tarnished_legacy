@@ -6,9 +6,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacy;
+import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.TarnishedArmorMaterials;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.armor.sets.*;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.relics.TarnishedRelicItem;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.item.shields.CrucibleHornshieldItem;
@@ -31,28 +30,16 @@ public final class ItemRegistry {
             Rarity rarity
     ) {
         return new Item.Properties()
-                .durability(type.getDurability(durabilityMultiplier))
+                .durability(TarnishedArmorMaterials.durability(type, durabilityMultiplier))
                 .stacksTo(1)
                 .rarity(rarity)
                 .arch$tab(TabRegistry.TARNISHED_LEGACY_TAB);
     }
 
-    private static Item.Properties weaponProperties(
-            Tier tier,
-            int attackDamage,
-            float attackSpeed,
-            Rarity rarity
-    ) {
+    private static Item.Properties weaponProperties(Rarity rarity) {
         return new Item.Properties()
                 .stacksTo(1)
                 .rarity(rarity)
-                .attributes(
-                        SwordItem.createAttributes(
-                                tier,
-                                attackDamage,
-                                attackSpeed
-                        )
-                )
                 .arch$tab(TabRegistry.TARNISHED_LEGACY_TAB);
     }
 
@@ -427,12 +414,9 @@ public final class ItemRegistry {
                     "night_rider_glaive",
                     () -> new NightRiderGlaiveItem(
                             TarnishedWeaponMaterials.NIGHTRIDER_TIER,
-                            weaponProperties(
-                                    TarnishedWeaponMaterials.NIGHTRIDER_TIER,
-                                    5,
-                                    -2.8F,
-                                    Rarity.RARE
-                            )
+                            5,
+                            -2.8F,
+                            weaponProperties(Rarity.RARE)
                     )
             );
 
@@ -441,12 +425,9 @@ public final class ItemRegistry {
                     "blaidd_royal_greatsword",
                     () -> new BlaiddRoyalGreatswordItem(
                             TarnishedWeaponMaterials.BLAIDD_TIER,
-                            weaponProperties(
-                                    TarnishedWeaponMaterials.BLAIDD_TIER,
-                                    7,
-                                    -3.0F,
-                                    Rarity.EPIC
-                            )
+                            7,
+                            -3.0F,
+                            weaponProperties(Rarity.EPIC)
                     )
             );
 
@@ -455,12 +436,9 @@ public final class ItemRegistry {
                     "crucible_greatsword",
                     () -> new CrucibleGreatswordItem(
                             TarnishedWeaponMaterials.CRUCIBLE_TIER,
-                            weaponProperties(
-                                    TarnishedWeaponMaterials.CRUCIBLE_TIER,
-                                    7,
-                                    -2.9F,
-                                    Rarity.EPIC
-                            )
+                            7,
+                            -2.9F,
+                            weaponProperties(Rarity.EPIC)
                     )
             );
 
@@ -469,12 +447,9 @@ public final class ItemRegistry {
                     "tree_sentinel_halberd",
                     () -> new TreeSentinelHalberdItem(
                             TarnishedWeaponMaterials.TREE_SENTINEL_TIER,
-                            weaponProperties(
-                                    TarnishedWeaponMaterials.TREE_SENTINEL_TIER,
-                                    6,
-                                    -2.8F,
-                                    Rarity.EPIC
-                            )
+                            6,
+                            -2.8F,
+                            weaponProperties(Rarity.EPIC)
                     )
             );
 
@@ -483,12 +458,9 @@ public final class ItemRegistry {
                     "maliketh_black_blade",
                     () -> new MalikethBlackBladeItem(
                             TarnishedWeaponMaterials.MALIKETH_TIER,
-                            weaponProperties(
-                                    TarnishedWeaponMaterials.MALIKETH_TIER,
-                                    8,
-                                    -3.1F,
-                                    Rarity.EPIC
-                            )
+                            8,
+                            -3.1F,
+                            weaponProperties(Rarity.EPIC)
                     )
             );
 
@@ -497,12 +469,9 @@ public final class ItemRegistry {
                     "nagakiba",
                     () -> new NagakibaItem(
                             TarnishedWeaponMaterials.SAMURAI_TIER,
-                            weaponProperties(
-                                    TarnishedWeaponMaterials.SAMURAI_TIER,
-                                    7,
-                                    -2.4F,
-                                    Rarity.EPIC
-                            )
+                            7,
+                            -2.4F,
+                            weaponProperties(Rarity.EPIC)
                     )
             );
 
@@ -511,12 +480,9 @@ public final class ItemRegistry {
                     "starscourge_greatsword",
                     () -> new StarscourgeGreatswordItem(
                             TarnishedWeaponMaterials.RADAHN_TIER,
-                            weaponProperties(
-                                    TarnishedWeaponMaterials.RADAHN_TIER,
-                                    9,
-                                    -3.2F,
-                                    Rarity.EPIC
-                            )
+                            9,
+                            -3.2F,
+                            weaponProperties(Rarity.EPIC)
                     )
             );
 

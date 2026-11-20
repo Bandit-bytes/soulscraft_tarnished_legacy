@@ -11,4 +11,4 @@ rootProject.name = 'soulscraft_tarnished_legacy'
 
 include 'common'
 include 'fabric'
-include 'neoforge'
+include 'forge'
