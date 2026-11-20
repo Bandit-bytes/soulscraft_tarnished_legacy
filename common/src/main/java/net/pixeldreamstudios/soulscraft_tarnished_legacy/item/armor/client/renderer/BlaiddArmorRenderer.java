@@ -10,7 +10,7 @@ public final class BlaiddArmorRenderer extends GeoArmorRenderer<TarnishedArmorIt
     public BlaiddArmorRenderer() {
         super(new TarnishedArmorModel(
                 SoulsCraftTarnishedLegacy.resource("geo/armor/blaidd_armor.geo.json"),
-                SoulsCraftTarnishedLegacy.resource("textures/armor/blaidd_armor.png"),
+                TarnishedArmorRendererFactory.texture("blaidd"),
                 CapeStyle.BLAIDD
         ));
     }

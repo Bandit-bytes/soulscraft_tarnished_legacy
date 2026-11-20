@@ -10,7 +10,7 @@ public final class TreeSentinelArmorRenderer extends GeoArmorRenderer<TarnishedA
     public TreeSentinelArmorRenderer() {
         super(new TarnishedArmorModel(
                 SoulsCraftTarnishedLegacy.resource("geo/armor/tree_sentinel_armor.geo.json"),
-                SoulsCraftTarnishedLegacy.resource("textures/armor/tree_sentinel.png"),
+                TarnishedArmorRendererFactory.texture("tree_sentinel"),
                 CapeStyle.TREE_SENTINEL
         ));
     }

@@ -10,7 +10,7 @@ public final class RadahnArmorRenderer extends GeoArmorRenderer<TarnishedArmorIt
     public RadahnArmorRenderer() {
         super(new TarnishedArmorModel(
                 SoulsCraftTarnishedLegacy.resource("geo/armor/radahn_armor.geo.json"),
-                SoulsCraftTarnishedLegacy.resource("textures/armor/radahn_armor.png"),
+                TarnishedArmorRendererFactory.texture("radahn"),
                 CapeStyle.BLAIDD
         ));
     }

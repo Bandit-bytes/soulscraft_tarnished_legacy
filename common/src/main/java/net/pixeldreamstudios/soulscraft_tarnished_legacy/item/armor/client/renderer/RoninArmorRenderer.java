@@ -10,7 +10,7 @@ public final class RoninArmorRenderer extends GeoArmorRenderer<TarnishedArmorIte
     public RoninArmorRenderer() {
         super(new TarnishedArmorModel(
                 SoulsCraftTarnishedLegacy.resource("geo/armor/ronin_armor.geo.json"),
-                SoulsCraftTarnishedLegacy.resource("textures/armor/ronin_armor.png"),
+                TarnishedArmorRendererFactory.texture("ronin"),
                 CapeStyle.BLAIDD
         ));
     }

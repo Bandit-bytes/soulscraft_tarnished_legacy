@@ -31,7 +31,6 @@ public final class ItemRegistry {
     ) {
         return new Item.Properties()
                 .durability(TarnishedArmorMaterials.durability(type, durabilityMultiplier))
-                .stacksTo(1)
                 .rarity(rarity)
                 .arch$tab(TabRegistry.TARNISHED_LEGACY_TAB);
     }
@@ -46,7 +45,6 @@ public final class ItemRegistry {
     private static Item.Properties shieldProperties(int durability, Rarity rarity) {
         return new Item.Properties()
                 .durability(durability)
-                .stacksTo(1)
                 .rarity(rarity)
                 .arch$tab(TabRegistry.TARNISHED_LEGACY_TAB);
     }

@@ -10,7 +10,7 @@ public final class NightRiderArmorRenderer extends GeoArmorRenderer<TarnishedArm
     public NightRiderArmorRenderer() {
         super(new TarnishedArmorModel(
                 SoulsCraftTarnishedLegacy.resource("geo/armor/night_rider.geo.json"),
-                SoulsCraftTarnishedLegacy.resource("textures/armor/night_rider.png"),
+                TarnishedArmorRendererFactory.texture("night_rider"),
                 CapeStyle.MALIKETH
         ));
     }

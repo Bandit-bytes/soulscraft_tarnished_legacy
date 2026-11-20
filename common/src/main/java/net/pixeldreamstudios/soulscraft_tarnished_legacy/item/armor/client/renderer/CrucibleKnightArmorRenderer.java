@@ -10,7 +10,7 @@ public final class CrucibleKnightArmorRenderer extends GeoArmorRenderer<Tarnishe
     public CrucibleKnightArmorRenderer() {
         super(new TarnishedArmorModel(
                 SoulsCraftTarnishedLegacy.resource("geo/armor/crucible_knight_armor.geo.json"),
-                SoulsCraftTarnishedLegacy.resource("textures/armor/crucible_knight_armor.png"),
+                TarnishedArmorRendererFactory.texture("crucible_knight"),
                 CapeStyle.NONE
         ));
     }

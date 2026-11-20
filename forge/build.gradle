@@ -32,6 +32,8 @@ dependencies {
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
 
     modImplementation "software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}"
+    // GeckoLib jar-in-jars mclib, which Forge's dev runtime doesn't load.
+    forgeRuntimeLibrary "com.eliotlash.mclib:mclib:20"
 }
 
 processResources {

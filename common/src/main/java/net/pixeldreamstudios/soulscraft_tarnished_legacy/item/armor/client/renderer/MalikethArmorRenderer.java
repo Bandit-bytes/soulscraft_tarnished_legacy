@@ -10,7 +10,7 @@ public final class MalikethArmorRenderer extends GeoArmorRenderer<TarnishedArmor
     public MalikethArmorRenderer() {
         super(new TarnishedArmorModel(
                 SoulsCraftTarnishedLegacy.resource("geo/armor/maliketh_armor.geo.json"),
-                SoulsCraftTarnishedLegacy.resource("textures/armor/maliketh_armor.png"),
+                TarnishedArmorRendererFactory.texture("maliketh"),
                 CapeStyle.MALIKETH
         ));
     }
