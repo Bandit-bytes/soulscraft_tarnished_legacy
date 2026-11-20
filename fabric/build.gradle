@@ -58,7 +58,7 @@ publishMods {
     displayName = "soulscraft-tarnished-legacy-fabric-${project.version}"
     version = project.version.toString()
     changelog = rootProject.releaseChangelog()
-    type = STABLE
+    type = BETA
     modLoaders.add("fabric")
     dryRun = providers.gradleProperty("curseforge_token").getOrNull() == null || providers.gradleProperty("publishDryRun").isPresent()
 

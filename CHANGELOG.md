@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.3.1
+
+First release for **Minecraft 1.20.1** (Fabric and Forge), with all the armor, weapons, shields, set bonuses and advancements from 1.3.0 on 1.21.1.
+
+### Fixes
+- **Fabric:** the Crucible Hornshield and Erdtree Greatshield now lose durability when blocking and are disabled by axes, like the vanilla shield. Forge already did this.
+
+### Differences from 1.21.1
+- Radahn's Gravity Crash uses the explosion sound, since the mace sounds don't exist in 1.20.1.
+- The shields are tagged `c:shields` and `forge:tools/shields` instead of `c:tools/shield`. There is no `c:tools/melee_weapon` tag; the weapons are in `minecraft:swords`.
+
 ## 1.3.0
 
 Includes everything since 1.2.3.
@@ -18,7 +29,7 @@ Includes everything since 1.2.3.
 - **Advancements:** a new Tarnished Legacy tab with 7 advancements, including two challenges.
 - **Death messages** for Blood Loss, Gravity Crash and the Greatsword of Radahn's pillars of light.
 - **Better Combat:** the Royal Greatsword and Maliketh's Black Blade now have attack animations. All four heavy swords use two-handed claymore moves.
-- Added the `c:tools/shield` and `c:tools/melee_weapon` tags, so other mods recognise the weapons and shields.
+- Added the `c:shields` and `forge:tools/shields` tags, so other mods recognise the shields.
 
 ### Changes
 - Speed and attack set bonuses are now attribute modifiers instead of potion effects. Milk no longer removes them, and they don't clash with potions.
