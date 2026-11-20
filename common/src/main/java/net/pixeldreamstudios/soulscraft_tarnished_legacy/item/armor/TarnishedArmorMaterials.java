@@ -12,16 +12,21 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.pixeldreamstudios.soulscraft_tarnished_legacy.SoulsCraftTarnishedLegacy;
 
 public enum TarnishedArmorMaterials implements ArmorMaterial {
-    NIGHT_RIDER("night_rider", 32, 3, 6, 8, 3, 10, 2.0F, 0.10F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.IRON_INGOT),
-    BLAIDD("blaidd", 35, 3, 6, 8, 3, 12, 2.5F, 0.10F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.IRON_INGOT),
-    RONIN("ronin", 35, 3, 6, 8, 3, 12, 2.5F, 0.10F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.IRON_INGOT),
-    CRUCIBLE_KNIGHT("crucible_knight", 39, 4, 7, 9, 4, 15, 3.5F, 0.20F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.GOLD_INGOT),
-    CRUCIBLE_TREE("crucible_tree", 39, 4, 7, 9, 4, 15, 3.5F, 0.20F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.GOLD_INGOT),
-    TREE_SENTINEL("tree_sentinel", 41, 4, 7, 9, 4, 14, 3.0F, 0.20F, SoundEvents.ARMOR_EQUIP_GOLD, () -> Items.GOLD_INGOT),
-    MALIKETH("maliketh", 45, 4, 7, 9, 4, 18, 4.0F, 0.25F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.NETHERITE_INGOT),
-    RADAHN("radahn", 48, 4, 7, 10, 4, 14, 4.0F, 0.30F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.GOLD_INGOT);
+    NIGHT_RIDER(32, 3, 6, 8, 3, 10, 2.0F, 0.10F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.IRON_INGOT),
+    BLAIDD(35, 3, 6, 8, 3, 12, 2.5F, 0.10F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.IRON_INGOT),
+    RONIN(35, 3, 6, 8, 3, 12, 2.5F, 0.10F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.IRON_INGOT),
+    CRUCIBLE_KNIGHT(39, 4, 7, 9, 4, 15, 3.5F, 0.20F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.GOLD_INGOT),
+    CRUCIBLE_TREE(39, 4, 7, 9, 4, 15, 3.5F, 0.20F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.GOLD_INGOT),
+    TREE_SENTINEL(41, 4, 7, 9, 4, 14, 3.0F, 0.20F, SoundEvents.ARMOR_EQUIP_GOLD, () -> Items.GOLD_INGOT),
+    MALIKETH(45, 4, 7, 9, 4, 18, 4.0F, 0.25F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.NETHERITE_INGOT),
+    RADAHN(48, 4, 7, 10, 4, 14, 4.0F, 0.30F, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Items.GOLD_INGOT);
 
-    private final String name;
+    /**
+     * Vanilla's armor layer still binds textures/models/armor/{name}_layer_N.png before GeckoLib renders, so every
+     * set shares one name backed by transparent placeholders. The real textures come from the GeckoLib renderers.
+     */
+    private static final String VANILLA_TEXTURE_NAME = SoulsCraftTarnishedLegacy.MOD_ID + ":tarnished";
+
     private final int durabilityMultiplier;
     private final int boots;
     private final int leggings;
@@ -34,7 +39,6 @@ public enum TarnishedArmorMaterials implements ArmorMaterial {
     private final Supplier<Ingredient> repairIngredient;
 
     TarnishedArmorMaterials(
-            String id,
             int durabilityMultiplier,
             int boots,
             int leggings,
@@ -46,7 +50,6 @@ public enum TarnishedArmorMaterials implements ArmorMaterial {
             SoundEvent equipSound,
             Supplier<Item> repairItem
     ) {
-        this.name = SoulsCraftTarnishedLegacy.MOD_ID + ":" + id;
         this.durabilityMultiplier = durabilityMultiplier;
         this.boots = boots;
         this.leggings = leggings;
@@ -102,7 +105,7 @@ public enum TarnishedArmorMaterials implements ArmorMaterial {
 
     @Override
     public String getName() {
-        return this.name;
+        return VANILLA_TEXTURE_NAME;
     }
 
     @Override

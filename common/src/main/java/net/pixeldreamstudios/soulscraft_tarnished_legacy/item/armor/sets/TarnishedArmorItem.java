@@ -12,7 +12,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -79,12 +78,6 @@ public class TarnishedArmorItem extends ArmorItem implements GeoItem {
     // Forge calls this from the Item constructor, so setId is read lazily when the renderer is first built.
     public void initializeClient(Consumer<Object> consumer) {
         consumer.accept(createArmorRenderProvider());
-    }
-
-    // No @Override: matches Forge's IForgeItem#getArmorTexture. Without it Forge's armor layer looks up the
-    // nonexistent vanilla textures/models/armor/<material>_layer_N.png and logs a stack trace for each.
-    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-        return TarnishedArmorRendererFactory.texture(this.setId).toString();
     }
 
     private Object createArmorRenderProvider() {
