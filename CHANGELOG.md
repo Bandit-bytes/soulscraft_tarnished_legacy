@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1
+
+### Fixes
+- **Fabric:** the Crucible Hornshield and Erdtree Greatshield now lose durability when blocking and are disabled by axes, like the vanilla shield. NeoForge already did this.
+
 ## 1.3.0
 
 Includes everything since 1.2.3.
